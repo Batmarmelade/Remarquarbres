@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Quiz">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/QuestionsGen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="30dp"
+            android:gravity="center"
+            android:text="@string/QuestionsGen" />
+
+        <TextView
+            android:id="@+id/QuestionNomTxtVw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/QuestionNom" />
+
+        <EditText
+            android:id="@+id/NomTxtEd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/HintNom"
+            android:inputType="textPersonName" />
+
+        <TextView
+            android:id="@+id/QuestionPseudoTxtVw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="@string/QuestionPseudo" />
+
+        <TextView
+            android:id="@+id/AidePseudoTxtVw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/darker_gray"
+            android:text="@string/AidePseudo" />
+
+        <EditText
+            android:id="@+id/PseudoTxtEd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/HintPseudo"
+            android:inputType="textPersonName" />
+
+        <TextView
+            android:id="@+id/QuestionMailTxtVw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="@string/QuestionMail" />
+
+        <TextView
+            android:id="@+id/AideMailTxtVw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/darker_gray"
+            android:text="@string/AideMail" />
+
+        <EditText
+            android:id="@+id/MailTxtEd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/HintMail"
+            android:inputType="textWebEmailAddress" />
+
+        <Button
+            android:id="@+id/SubmitButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="submit"
+            android:text="@string/SubmitButton" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">Remarquarbres</string>
+    <string name="testStr">Testing ...</string>
+    <string name="SubmitButton"> Envoyer ! </string>
+
+
+    <!-- Questions Quiz -->
+    <string name="QuestionsGen">Pour pouvoir avoir un peu plus d\'informations, veuillez renseigner les champs suivants</string>
+    <string name="QuestionNom">Votre nom et prénom ( Obligatoire )</string>
+    <string name="QuestionPseudo">Nom à afficher</string>
+    <string name="QuestionMail">Votre addresse mail</string>
+
+    <!-- Aides -->
+    <string name="AidePseudo">Vous pouvez mettre ici un pseudonyme qui ne servira que pour l\'affichage</string>
+    <string name="AideMail">Pour vous contacter si nécessaire (exclusivement)</string>
+
+    <!-- Hints -->
+    <string name="HintNom">Pierre Dupont</string>
+    <string name="HintPseudo">Pierrot La Lune</string>
+    <string name="HintMail">pierre.dupont@exemple.fr</string>
 </resources>
