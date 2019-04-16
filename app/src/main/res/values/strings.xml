@@ -9,13 +9,33 @@
     <string name="QuestionNom">Votre nom et prénom ( Obligatoire )</string>
     <string name="QuestionPseudo">Nom à afficher</string>
     <string name="QuestionMail">Votre addresse mail</string>
+    <string name="QuestionArbres">Nom de l\'arbre</string>
 
     <!-- Aides -->
     <string name="AidePseudo">Vous pouvez mettre ici un pseudonyme qui ne servira que pour l\'affichage</string>
     <string name="AideMail">Pour vous contacter si nécessaire (exclusivement)</string>
+    <string name="AideArbres">Connaissez-vous cet arbre ? Si oui, complétez</string>
 
     <!-- Hints -->
     <string name="HintNom">Pierre Dupont</string>
     <string name="HintPseudo">Pierrot La Lune</string>
     <string name="HintMail">pierre.dupont@exemple.fr</string>
+    <string name="HintArbresAutre">Spécifiez ici le nom de l\'arbre</string>
+
+    <!-- Choix Arbres -->
+    <string name="Arbre1">Chêne</string>
+    <string name="Arbre2">Frêne</string>
+    <string name="Arbre3">Peuplier</string>
+    <string name="Arbre4">Pin</string>
+    <string name="Arbre5">Cèdre</string>
+    <string name="Arbre6">Érable</string>
+    <string name="Arbre7">Séquoia</string>
+    <string name="Arbre8">Platane</string>
+    <string name="Arbre9">Marronier</string>
+    <string name="Arbre10">Châtaigner</string>
+    <string name="Arbre11">Hêtre</string>
+    <string name="Arbre12">Magnolia</string>
+    <string name="Arbre13">Tilleul</string>
+    <string name="ArbreAutre">Autre</string>
+    <string name="ArbreAutreSelected">Autre, précisez :</string>
 </resources>
