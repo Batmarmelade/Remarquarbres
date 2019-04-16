@@ -247,6 +247,149 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/QuestionBotaniqueTxtVw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="@string/QuestionBotanique" />
+
+            <TextView
+                android:id="@+id/AideBotaniqueTxtVw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/darker_gray"
+                android:text="@string/AideBotanique" />
+
+            <EditText
+                android:id="@+id/BotaniqueTxtEd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/HintBotanique"
+                android:inputType="textPersonName" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/QuestionLatitudeTxtVw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="@string/QuestionLatitude" />
+
+            <TextView
+                android:id="@+id/AideCoordonéesLatitudeTxtVw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/darker_gray"
+                android:text="@string/AideCoordonées" />
+
+            <EditText
+                android:id="@+id/LatitudeTxtEd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/HintLatitude"
+                android:inputType="textPersonName" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/QuestionLongitudeTxtVw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="@string/QuestionLongitude" />
+
+            <TextView
+                android:id="@+id/AideCoordonéesLongitudeTxtVw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/darker_gray"
+                android:text="@string/AideCoordonées" />
+
+            <EditText
+                android:id="@+id/LongitudeTxtEd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/HintLongitude"
+                android:inputType="textPersonName" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/QuestionAddresseTxtVw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="@string/QuestionAddresse" />
+
+            <TextView
+                android:id="@+id/AideAddresseTxtVw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/darker_gray"
+                android:text="@string/AideAddresse" />
+
+            <EditText
+                android:id="@+id/AddresseTxtEd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/HintAddresse"
+                android:inputType="textPostalAddress" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/QuestionObservationsTxtVw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="@string/QuestionObservations" />
+
+            <EditText
+                android:id="@+id/ObservationsTxtEd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/HintObservations"
+                android:inputType="text|textMultiLine" />
+
+        </LinearLayout>
+
         <Button
             android:id="@+id/SubmitButton"
             android:layout_width="match_parent"
