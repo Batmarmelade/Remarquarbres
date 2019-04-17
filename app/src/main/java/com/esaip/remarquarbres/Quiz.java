@@ -79,14 +79,44 @@ public class Quiz extends AppCompatActivity {
         // Addresse
         returnIntent.putExtra("Addresse", ((EditText) findViewById(R.id.AddresseTxtEd)).getText().toString() );
 
+        // Emplacement
+        RadioGroup emplacementsRG = (RadioGroup) findViewById(R.id.EmplacementsRG);
+        String strEmplacement = "";
+        if ( emplacementsRG.getCheckedRadioButtonId() != -1 ) {
+            RadioButton rbChecked = (RadioButton) findViewById(emplacementsRG.getCheckedRadioButtonId());
+            strEmplacement = rbChecked.getText().toString();
+        }
+        returnIntent.putExtra("Emplacement", strEmplacement);
+
         /*
          *
          * TO DO
          *
          */
+        // Remarquabilité
+        RadioGroup remarquabilitésRG = (RadioGroup) findViewById(R.id.RemarquabilitésRG);
+        String strRemarquabilité = "";
+        if ( remarquabilitésRG.getCheckedRadioButtonId() != -1 ) {
+            RadioButton rbChecked = (RadioButton) findViewById(remarquabilitésRG.getCheckedRadioButtonId());
+            strRemarquabilité = rbChecked.getText().toString();
+        }
+        returnIntent.putExtra("Remarquabilité", strRemarquabilité);
 
         // Observations
         returnIntent.putExtra("Observations", ((EditText) findViewById(R.id.ObservationsTxtEd)).getText().toString() );
+
+        // Verification Infos Botaniste
+        RadioGroup verifBotanisteRG = (RadioGroup) findViewById(R.id.VerifBotanisteRG);
+        String strVerifBotaniste = "";
+        if ( verifBotanisteRG.getCheckedRadioButtonId() != -1 ) {
+            RadioButton rbChecked = (RadioButton) findViewById(verifBotanisteRG.getCheckedRadioButtonId());
+            strVerifBotaniste = rbChecked.getText().toString();
+        }
+        returnIntent.putExtra("Vérification Infos Botaniste", strVerifBotaniste);
+
+
+
+
         setResult(Activity.RESULT_OK, returnIntent);
         finish();
     }

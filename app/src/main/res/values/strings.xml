@@ -15,6 +15,9 @@
     <string name="QuestionLongitude">Entrez votre Longitude</string>
     <string name="QuestionAddresse">Addresse de l\'arbre (Obligatoire)</string>
     <string name="QuestionObservations">Avez-vous des Observations ?</string>
+    <string name="QuestionEmplacement">Sur quel emplacement est cet arbre ?</string>
+    <string name="QuestionRemarquabilité">Remarquabilité (Obligatoire)</string>
+    <string name="QuestionVerifBotaniste">Informations vérifiées sur site par un botaniste ? (Obligatoire)</string>
 
     <!-- Aides -->
     <string name="AidePseudo">Vous pouvez mettre ici un pseudonyme qui ne servira que pour l\'affichage</string>
@@ -23,6 +26,7 @@
     <string name="AideBotanique">Entrez le nom botanique, si vous le connaissez</string>
     <string name="AideCoordonées">De préférence au format décimal</string>
     <string name="AideAddresse">N°, rue, ville</string>
+    <string name="AideRemarquabilité">Globalement, cet arbre est pour vous (Cochez votre choix)</string>
 
     <!-- Hints -->
     <string name="HintNom">Ex: Pierre Dupont</string>
@@ -52,4 +56,17 @@
     <string name="Arbre13">Tilleul</string>
     <string name="ArbreAutre">Autre</string>
     <string name="ArbreAutreSelected">Autre, précisez :</string>
+
+    <!-- Choix Emplacement -->
+    <string name="Emplacement1">Un espace public</string>
+    <string name="Emplacement2">Un espace privé</string>
+    <string name="Emplacement3">Je ne sais pas</string>
+
+    <!-- Choix Remarquabilité -->
+    <string name="Remarquabilité1">Très remarquable ou exceptionnel</string>
+    <string name="Remarquabilité2">Remarquable ou majestueux</string>
+    <string name="Remarquabilité3">Notoire, un repère à l\'échelle de votre quartier</string>
+
+    <string name="oui">Oui</string>
+    <string name="non">Non</string>
 </resources>
