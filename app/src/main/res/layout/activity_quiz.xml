@@ -235,9 +235,7 @@
             <EditText
                 android:id="@+id/ArbresAutreEd"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/ArbresRG"
-                android:layout_toRightOf="@+id/ArbresRG"
+                android:layout_height="0dp"
                 android:layout_weight="1"
                 android:ems="10"
                 android:hint="@string/HintArbresAutre"
@@ -373,29 +371,6 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/QuestionObservationsTxtVw"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:gravity="center"
-                android:text="@string/QuestionObservations" />
-
-            <EditText
-                android:id="@+id/ObservationsTxtEd"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="@string/HintObservations"
-                android:inputType="text|textMultiLine" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <TextView
                 android:id="@+id/QuestionEmplacementTxtVw"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -431,6 +406,81 @@
                     android:text="@string/Emplacement3" />
 
             </RadioGroup>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/QuestionRemarquableTxtVw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="@string/QuestionRemarquable" />
+
+            <TextView
+                android:id="@+id/AideRemarquableTxtVw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/darker_gray"
+                android:text="@string/AideRemarquable" />
+
+            <CheckBox
+                android:id="@+id/Remarquable1ChBx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Remarquable1"/>
+
+            <CheckBox
+                android:id="@+id/Remarquable2ChBx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Remarquable2"/>
+
+            <CheckBox
+                android:id="@+id/Remarquable3ChBx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Remarquable3"/>
+
+            <CheckBox
+                android:id="@+id/Remarquable4ChBx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Remarquable4"/>
+
+            <CheckBox
+                android:id="@+id/Remarquable5ChBx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Remarquable5"/>
+
+            <CheckBox
+                android:id="@+id/Remarquable6ChBx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Remarquable6"/>
+
+            <CheckBox
+                android:id="@+id/RemarquableAutreChBx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/RemarquableAutre"/>
+
+            <EditText
+                android:id="@+id/RemarquableAutreEd"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="@string/HintRemarquableAutre"
+                android:inputType="textPersonName"
+                android:text=""
+                android:visibility="gone" />
 
         </LinearLayout>
 
@@ -482,6 +532,29 @@
                     android:text="@string/Remarquabilité3" />
 
             </RadioGroup>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/QuestionObservationsTxtVw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="@string/QuestionObservations" />
+
+            <EditText
+                android:id="@+id/ObservationsTxtEd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/HintObservations"
+                android:inputType="text|textMultiLine" />
 
         </LinearLayout>
 

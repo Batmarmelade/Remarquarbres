@@ -18,6 +18,7 @@
     <string name="QuestionEmplacement">Sur quel emplacement est cet arbre ?</string>
     <string name="QuestionRemarquabilité">Remarquabilité (Obligatoire)</string>
     <string name="QuestionVerifBotaniste">Informations vérifiées sur site par un botaniste ? (Obligatoire)</string>
+    <string name="QuestionRemarquable">Remarquable</string>
 
     <!-- Aides -->
     <string name="AidePseudo">Vous pouvez mettre ici un pseudonyme qui ne servira que pour l\'affichage</string>
@@ -27,6 +28,7 @@
     <string name="AideCoordonées">De préférence au format décimal</string>
     <string name="AideAddresse">N°, rue, ville</string>
     <string name="AideRemarquabilité">Globalement, cet arbre est pour vous (Cochez votre choix)</string>
+    <string name="AideRemarquable">Cet arbre est remarquable du fait de (Cochez)</string>
 
     <!-- Hints -->
     <string name="HintNom">Ex: Pierre Dupont</string>
@@ -39,6 +41,7 @@
     <!-- Le 39 Rue Boreau, Angers est l'addresse du Jardin des Plantes -->
     <string name="HintAddresse">Ex: 39 Rue Boreau, Angers</string>
     <string name="HintObservations">Mettez ici vos observations</string>
+    <string name="HintRemarquableAutre">Spécifiez ce que vous trouvez remarquable</string>
 
     <!-- Choix Arbres -->
     <string name="Arbre1">Chêne</string>
@@ -62,11 +65,22 @@
     <string name="Emplacement2">Un espace privé</string>
     <string name="Emplacement3">Je ne sais pas</string>
 
+    <!-- Choix Remarquable -->
+    <string name="Remarquable1">Sa hauteur</string>
+    <string name="Remarquable2">Il est imposant</string>
+    <string name="Remarquable3">Son ancienneté (plus de 50 ans)</string>
+    <string name="Remarquable4">Sa rareté à Angers</string>
+    <string name="Remarquable5">Marquant dans le paysage</string>
+    <string name="Remarquable6">La mise en valeur mutuelle bati-végétal</string>
+    <string name="RemarquableAutre">Autre</string>
+    <string name="RemarquableAutreSelected">Autre, précisez :</string>
+
     <!-- Choix Remarquabilité -->
     <string name="Remarquabilité1">Très remarquable ou exceptionnel</string>
     <string name="Remarquabilité2">Remarquable ou majestueux</string>
     <string name="Remarquabilité3">Notoire, un repère à l\'échelle de votre quartier</string>
 
+    <!-- Choix Vérification Infos Botaniste -->
     <string name="oui">Oui</string>
     <string name="non">Non</string>
 </resources>
