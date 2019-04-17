@@ -490,6 +490,75 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/QuestionBiodiversitéTxtVw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="@string/QuestionBiodiversité" />
+
+            <TextView
+                android:id="@+id/AideBiodiversitéTxtVw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/darker_gray"
+                android:text="@string/AideBiodiversité" />
+
+            <CheckBox
+                android:id="@+id/Biodiversité1ChBx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Biodiversité1"/>
+
+            <CheckBox
+                android:id="@+id/Biodiversité2ChBx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Biodiversité2"/>
+
+            <CheckBox
+                android:id="@+id/Biodiversité3ChBx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Biodiversité3"/>
+
+            <CheckBox
+                android:id="@+id/Biodiversité4ChBx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Biodiversité4"/>
+
+            <CheckBox
+                android:id="@+id/Biodiversité5ChBx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Biodiversité5"/>
+
+            <CheckBox
+                android:id="@+id/BiodiversitéAutreChBx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/BiodiversitéAutre"/>
+
+            <EditText
+                android:id="@+id/BiodiversitéAutreEd"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="@string/HintBiodiversitéAutre"
+                android:inputType="textPersonName"
+                android:text=""
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
                 android:id="@+id/QuestionRemarquabilitéTxtVw"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -592,6 +661,35 @@
                     android:text="@string/non" />
 
             </RadioGroup>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/QuestionDateTxtVw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="@string/QuestionDate" />
+
+            <TextView
+                android:id="@+id/AideDateTxtVw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/darker_gray"
+                android:text="@string/AideDate" />
+
+            <EditText
+                android:id="@+id/DateEd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="deployDate"
+                android:text="@string/HintDate"/>
 
         </LinearLayout>
 

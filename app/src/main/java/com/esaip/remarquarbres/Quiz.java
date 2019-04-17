@@ -1,6 +1,7 @@
 package com.esaip.remarquarbres;
 
 import android.app.Activity;
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,17 +9,51 @@ import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Locale;
+
 public class Quiz extends AppCompatActivity {
+
+    private EditText dateEd;
+    private DatePickerDialog dpDialog;
+    private SimpleDateFormat dateFormatter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
+
+        dateFormatter = new SimpleDateFormat("dd-MM-yyyy", Locale.FRANCE);
+        dateEd = (EditText) findViewById(R.id.DateEd);
+        Calendar tempDate = Calendar.getInstance();
+        dateEd.setText(dateFormatter.format(tempDate.getTime()));
+
+        Calendar newCalendar = Calendar.getInstance();
+        dpDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
+
+            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                Calendar newDate = Calendar.getInstance();
+                newDate.set(year, monthOfYear, dayOfMonth);
+                dateEd.setText(dateFormatter.format(newDate.getTime()));
+            }
+
+        },newCalendar.get(Calendar.YEAR), newCalendar.get(Calendar.MONTH), newCalendar.get(Calendar.DAY_OF_MONTH));
+
+        dateEd.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if(hasFocus)
+                    dpDialog.show();
+                v.clearFocus();
+            }
+        });
 
         Log.d("D", "I'm in the Quiz");
 
@@ -40,18 +75,34 @@ public class Quiz extends AppCompatActivity {
             }
         });
 
-        final CheckBox choixRemarquableAutreChBx = (CheckBox) findViewById(R.id.RemarquableAutreChBx);
-        final EditText choixRemarquableAutreEd = (EditText) findViewById(R.id.RemarquableAutreEd);
-        choixRemarquableAutreChBx.setOnCheckedChangeListener(new CheckBox.OnCheckedChangeListener(){
+        final CheckBox RemarquableAutreChBx = (CheckBox) findViewById(R.id.RemarquableAutreChBx);
+        final EditText RemarquableAutreEd = (EditText) findViewById(R.id.RemarquableAutreEd);
+        RemarquableAutreChBx.setOnCheckedChangeListener(new CheckBox.OnCheckedChangeListener(){
 
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if ( compoundButton.isChecked() ){
-                    choixRemarquableAutreChBx.setText(R.string.RemarquableAutreSelected);
-                    choixRemarquableAutreEd.setVisibility(View.VISIBLE);
+                    RemarquableAutreChBx.setText(R.string.RemarquableAutreSelected);
+                    RemarquableAutreEd.setVisibility(View.VISIBLE);
                 } else {
-                    choixRemarquableAutreChBx.setText(R.string.RemarquableAutre);
-                    choixRemarquableAutreEd.setVisibility(View.GONE);
+                    RemarquableAutreChBx.setText(R.string.RemarquableAutre);
+                    RemarquableAutreEd.setVisibility(View.GONE);
+                }
+            }
+        });
+
+        final CheckBox biodiversitéAutreChBx = (CheckBox) findViewById(R.id.BiodiversitéAutreChBx);
+        final EditText biodiversitéAutreEd = (EditText) findViewById(R.id.BiodiversitéAutreEd);
+        biodiversitéAutreChBx.setOnCheckedChangeListener(new CheckBox.OnCheckedChangeListener(){
+
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if ( compoundButton.isChecked() ){
+                    biodiversitéAutreChBx.setText(R.string.BiodiversitéAutreSelected);
+                    biodiversitéAutreEd.setVisibility(View.VISIBLE);
+                } else {
+                    biodiversitéAutreChBx.setText(R.string.BiodiversitéAutre);
+                    biodiversitéAutreEd.setVisibility(View.GONE);
                 }
             }
         });
@@ -124,6 +175,24 @@ public class Quiz extends AppCompatActivity {
         }
         returnIntent.putExtra("Remarquable", strRemarquable);
 
+        // Biodiversité
+        String strBiodiversité = "";
+        Integer[] biodiversitéCheckBoxesIds = {R.id.Biodiversité1ChBx, R.id.Biodiversité2ChBx, R.id.Biodiversité3ChBx, R.id.Biodiversité4ChBx, R.id.Biodiversité5ChBx, R.id.BiodiversitéAutreChBx};
+
+        for ( Integer i : biodiversitéCheckBoxesIds ){
+            CheckBox temp = (CheckBox) findViewById(i);
+            if ( temp.isChecked() ){
+                if ( i == R.id.BiodiversitéAutreChBx ) {
+                    EditText biodiversitéAutreEd = (EditText) findViewById(R.id.BiodiversitéAutreEd);
+                    if ( ! biodiversitéAutreEd.getText().toString().equals("") )
+                        strBiodiversité += biodiversitéAutreEd.getText().toString() + ";";
+                } else {
+                    strBiodiversité += temp.getText() + ";";
+                }
+            }
+        }
+        returnIntent.putExtra("Biodiversité", strBiodiversité);
+
         /*
          *
          * TO DO
@@ -150,10 +219,14 @@ public class Quiz extends AppCompatActivity {
         }
         returnIntent.putExtra("Vérification Infos Botaniste", strVerifBotaniste);
 
-        // TO DO DATE
-
+        // Date
+        returnIntent.putExtra("Date", ((EditText) findViewById(R.id.DateEd)).getText().toString() );
 
         setResult(Activity.RESULT_OK, returnIntent);
         finish();
+    }
+
+    public void deployDate(android.view.View v){
+        dpDialog.show();
     }
 }

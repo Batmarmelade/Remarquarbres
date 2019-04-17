@@ -19,6 +19,8 @@
     <string name="QuestionRemarquabilité">Remarquabilité (Obligatoire)</string>
     <string name="QuestionVerifBotaniste">Informations vérifiées sur site par un botaniste ? (Obligatoire)</string>
     <string name="QuestionRemarquable">Remarquable</string>
+    <string name="QuestionBiodiversité">Biodiversité</string>
+    <string name="QuestionDate">Date (Obligatoire)</string>
 
     <!-- Aides -->
     <string name="AidePseudo">Vous pouvez mettre ici un pseudonyme qui ne servira que pour l\'affichage</string>
@@ -29,6 +31,8 @@
     <string name="AideAddresse">N°, rue, ville</string>
     <string name="AideRemarquabilité">Globalement, cet arbre est pour vous (Cochez votre choix)</string>
     <string name="AideRemarquable">Cet arbre est remarquable du fait de (Cochez)</string>
+    <string name="AideBiodiversité">Si vous savez que cet arbre héberge un ou plusieurs spécimens d\'espèce protégée, cochez.</string>
+    <string name="AideDate">Date de l\'inventaire</string>
 
     <!-- Hints -->
     <string name="HintNom">Ex: Pierre Dupont</string>
@@ -42,6 +46,8 @@
     <string name="HintAddresse">Ex: 39 Rue Boreau, Angers</string>
     <string name="HintObservations">Mettez ici vos observations</string>
     <string name="HintRemarquableAutre">Spécifiez ce que vous trouvez remarquable</string>
+    <string name="HintBiodiversitéAutre">Spécifiez les espèces protégées</string>
+    <string name="HintDate">Rentrez Votre Date ici</string>
 
     <!-- Choix Arbres -->
     <string name="Arbre1">Chêne</string>
@@ -74,6 +80,15 @@
     <string name="Remarquable6">La mise en valeur mutuelle bati-végétal</string>
     <string name="RemarquableAutre">Autre</string>
     <string name="RemarquableAutreSelected">Autre, précisez :</string>
+
+    <!-- Choix Biodiversité -->
+    <string name="Biodiversité1">Un écureuil roux</string>
+    <string name="Biodiversité2">Une chauve-souris</string>
+    <string name="Biodiversité3">Un capricorne</string>
+    <string name="Biodiversité4">Une chouette hulotte</string>
+    <string name="Biodiversité5">Un pic vert, noir, ...</string>
+    <string name="BiodiversitéAutre">Autre</string>
+    <string name="BiodiversitéAutreSelected">Autre, précisez :</string>
 
     <!-- Choix Remarquabilité -->
     <string name="Remarquabilité1">Très remarquable ou exceptionnel</string>
