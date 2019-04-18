@@ -3,17 +3,23 @@ package com.esaip.remarquarbres;
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.Point;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.Pair;
+import android.view.Display;
 import android.view.View;
+import android.view.ViewTreeObserver;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -118,6 +124,25 @@ public class Quiz extends AppCompatActivity {
         });
 
         this.réponses = new HashMap<>();
+
+        final ProgressBar progressBar = (ProgressBar) findViewById(R.id.progress_1);
+
+        Display display = getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        int width = size.x;
+        final int height = size.y;
+
+        final ScrollView scrollView = (ScrollView) findViewById(R.id.scrollView);
+        scrollView.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener() {
+            @Override
+            public void onScrollChanged() {
+                double scrollViewHeight = scrollView.getChildAt(0).getBottom() - scrollView.getHeight();
+                double getScrollY = scrollView.getScrollY();
+                double scrollPosition = (getScrollY / scrollViewHeight) * 100d;
+                progressBar.setProgress((int) scrollPosition);
+            }
+        });
     }
 
     public void submit(android.view.View v){

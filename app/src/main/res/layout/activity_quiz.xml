@@ -6,15 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".Quiz">
 
-    <ScrollView
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:id="@+id/progress_1"
+        android:layout_height="5dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:scrollbars="vertical">
+    <ScrollView
+        android:id="@+id/scrollView"
+        app:layout_constraintTop_toBottomOf="@+id/progress_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
         <TextView
             android:id="@+id/QuestionsGen"
@@ -715,8 +724,8 @@
             android:onClick="submit"
             android:text="@string/SubmitButton" />
 
-    </LinearLayout>
 
+            </LinearLayout>
     </ScrollView>
 
 </android.support.constraint.ConstraintLayout>
