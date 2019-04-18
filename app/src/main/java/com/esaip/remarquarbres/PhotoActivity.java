@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
 import android.media.Image;
 import android.net.Uri;
 import android.os.Environment;
@@ -27,9 +28,8 @@ import java.util.Date;
 
 public class PhotoActivity extends AppCompatActivity {
 
+    static final int REQUEST_TAKE_PHOTO = 71;
     String currentPhotoPath;
-    static final int REQUEST_TAKE_PHOTO = 1;
-
     Button bt_photo;
     ImageView iv_photo;
 
@@ -37,44 +37,34 @@ public class PhotoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_photo);
-
-        bt_photo = (Button) findViewById(R.id.BT_photo_take);
-        iv_photo = (ImageView) findViewById(R.id.IV_photo_image);
+        bt_photo = findViewById(R.id.BT_photo_take);
+        iv_photo = findViewById(R.id.IV_photo_image);
 
     }
 
-    public boolean isExternalStorageWritable() {
-        String state = Environment.getExternalStorageState();
-        if (Environment.MEDIA_MOUNTED.equals(state)) {
-            return true;
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data){
+        if(requestCode == REQUEST_TAKE_PHOTO && resultCode == Activity.RESULT_OK){
+
+            Bitmap bitmap = BitmapFactory.decodeFile(currentPhotoPath);
+            bitmap = RotateBitmap(bitmap,90);
+            iv_photo.setImageBitmap(bitmap);
+            galleryAddPic();
         }
-        return false;
+        super.onActivityResult(requestCode, resultCode, data);
     }
 
-    public File getPublicAlbumStorageDir(String albumName) {
-        // Get the directory for the user's public pictures directory.
-        File file = new File(Environment.getExternalStoragePublicDirectory(
-                Environment.DIRECTORY_PICTURES), albumName);
-        if (!file.mkdirs()) {
-            Log.e("FILE CREATION", "Directory not created");
+    public void changePhoto(View view) {
+        if (this.getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA_ANY)) {
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
+                dispatchTakePictureIntent();
+            } else {
+                Toast.makeText(this, R.string.no_camera_permission, Toast.LENGTH_LONG);
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, 2);
+            }
+        } else {
+            Toast.makeText(this, R.string.no_camera, Toast.LENGTH_LONG);
         }
-        return file;
-    }
-
-    private File createImageFile() throws IOException {
-        // Create an image file name
-        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-        String imageFileName = "JPEG_" + timeStamp + "_";
-        File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
-        File image = File.createTempFile(
-                imageFileName,  /* prefix */
-                ".jpg",         /* suffix */
-                storageDir      /* directory */
-        );
-
-        // Save a file: path for use with ACTION_VIEW intents
-        currentPhotoPath = image.getAbsolutePath();
-        return image;
     }
 
     private void dispatchTakePictureIntent() {
@@ -100,6 +90,29 @@ public class PhotoActivity extends AppCompatActivity {
         }
     }
 
+    private File createImageFile() throws IOException {
+        // Create an image file name
+        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+        String imageFileName = "JPEG_" + timeStamp + "_";
+        File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+        File image = File.createTempFile(
+                imageFileName,  /* prefix */
+                ".jpg",         /* suffix */
+                storageDir      /* directory */
+        );
+
+        // Save a file: path for use with ACTION_VIEW intents
+        currentPhotoPath = image.getAbsolutePath();
+        return image;
+    }
+    
+    public static Bitmap RotateBitmap(Bitmap source, float angle)
+    {
+        Matrix matrix = new Matrix();
+        matrix.postRotate(angle);
+        return Bitmap.createBitmap(source, 0, 0, source.getWidth(), source.getHeight(), matrix, true);
+    }
+
     private void galleryAddPic() {
         Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
         File f = new File(currentPhotoPath);
@@ -108,27 +121,4 @@ public class PhotoActivity extends AppCompatActivity {
         this.sendBroadcast(mediaScanIntent);
     }
 
-    public void changePhoto(View view) {
-        if (this.getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA_ANY)) {
-            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
-                dispatchTakePictureIntent();
-
-            } else {
-                Toast.makeText(this, R.string.no_camera_permission, Toast.LENGTH_LONG);
-                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, 2);
-
-            }
-        } else {
-            Toast.makeText(this, R.string.no_camera, Toast.LENGTH_LONG);
-        }
-    }
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data){
-        if(requestCode == REQUEST_TAKE_PHOTO && resultCode == Activity.RESULT_OK){
-            galleryAddPic();
-            Bitmap bitmap = BitmapFactory.decodeFile(currentPhotoPath);
-            iv_photo.setImageBitmap(bitmap);
-        }
-        super.onActivityResult(requestCode, resultCode, data);
-    }
 }
