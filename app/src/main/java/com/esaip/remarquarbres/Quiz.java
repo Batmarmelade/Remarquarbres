@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.Pair;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -14,16 +15,25 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Dictionary;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
+import java.util.Set;
 
 public class Quiz extends AppCompatActivity {
 
     private EditText dateEd;
     private DatePickerDialog dpDialog;
     private SimpleDateFormat dateFormatter;
+    private final String[] intitulesQuestions = {"Nom", "Pseudo", "Mail", "Nom de l'arbre", "Nom Botanique", "Latitude", "Longitude", "Addresse", "Emplacement", "Remarquable", "Biodiversité", "Remarquabilité", "Observations", "VérifBotaniste", "Date"};
+    private final String[] obligatoires = {"Nom", "Addresse", "Emplacement", "Remarquabilité", "VérifBotaniste", "Date"};
+    private HashMap<String, String> réponses;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,19 +117,21 @@ public class Quiz extends AppCompatActivity {
             }
         });
 
+        this.réponses = new HashMap<>();
     }
 
     public void submit(android.view.View v){
+
         Intent returnIntent = getIntent();
 
         // Nom & Prénom
-        returnIntent.putExtra("Nom & Prénom", ((EditText) findViewById(R.id.NomTxtEd)).getText().toString() );
+        this.réponses.put("Nom", ((EditText) findViewById(R.id.NomTxtEd)).getText().toString() );
 
         // Pseudonyme
-        returnIntent.putExtra("Pseudo", ((EditText) findViewById(R.id.PseudoTxtEd)).getText().toString() );
+        this.réponses.put("Pseudo", ((EditText) findViewById(R.id.PseudoTxtEd)).getText().toString() );
 
         // Addresse Mail
-        returnIntent.putExtra("Mail", ((EditText) findViewById(R.id.MailTxtEd)).getText().toString() );
+        this.réponses.put("Mail", ((EditText) findViewById(R.id.MailTxtEd)).getText().toString() );
 
         // Nom de l'arbre
         String strNomArbre = "";
@@ -134,19 +146,19 @@ public class Quiz extends AppCompatActivity {
                 strNomArbre = rbChecked.getText().toString();
             }
         }
-        returnIntent.putExtra("Nom de l'arbre", strNomArbre);
+        this.réponses.put("Nom de l'arbre", strNomArbre);
 
         // Nom Botanique de l'arbre
-        returnIntent.putExtra("Nom Botanique", ((EditText) findViewById(R.id.BotaniqueTxtEd)).getText().toString() );
+        this.réponses.put("Nom Botanique", ((EditText) findViewById(R.id.BotaniqueTxtEd)).getText().toString() );
 
         // Latitude
-        returnIntent.putExtra("Latitude", ((EditText) findViewById(R.id.LatitudeTxtEd)).getText().toString() );
+        this.réponses.put("Latitude", ((EditText) findViewById(R.id.LatitudeTxtEd)).getText().toString() );
 
         // Longitude
-        returnIntent.putExtra("Longitude", ((EditText) findViewById(R.id.LongitudeTxtEd)).getText().toString() );
+        this.réponses.put("Longitude", ((EditText) findViewById(R.id.LongitudeTxtEd)).getText().toString() );
 
         // Addresse
-        returnIntent.putExtra("Addresse", ((EditText) findViewById(R.id.AddresseTxtEd)).getText().toString() );
+        this.réponses.put("Addresse", ((EditText) findViewById(R.id.AddresseTxtEd)).getText().toString() );
 
         // Emplacement
         RadioGroup emplacementsRG = (RadioGroup) findViewById(R.id.EmplacementsRG);
@@ -155,7 +167,7 @@ public class Quiz extends AppCompatActivity {
             RadioButton rbChecked = (RadioButton) findViewById(emplacementsRG.getCheckedRadioButtonId());
             strEmplacement = rbChecked.getText().toString();
         }
-        returnIntent.putExtra("Emplacement", strEmplacement);
+        this.réponses.put("Emplacement", strEmplacement);
 
         // Remarquable
         String strRemarquable = "";
@@ -173,7 +185,7 @@ public class Quiz extends AppCompatActivity {
                 }
             }
         }
-        returnIntent.putExtra("Remarquable", strRemarquable);
+        this.réponses.put("Remarquable", strRemarquable);
 
         // Biodiversité
         String strBiodiversité = "";
@@ -191,13 +203,8 @@ public class Quiz extends AppCompatActivity {
                 }
             }
         }
-        returnIntent.putExtra("Biodiversité", strBiodiversité);
+        this.réponses.put("Biodiversité", strBiodiversité);
 
-        /*
-         *
-         * TO DO
-         *           Biodiversité
-         */
         // Remarquabilité
         RadioGroup remarquabilitésRG = (RadioGroup) findViewById(R.id.RemarquabilitésRG);
         String strRemarquabilité = "";
@@ -205,10 +212,10 @@ public class Quiz extends AppCompatActivity {
             RadioButton rbChecked = (RadioButton) findViewById(remarquabilitésRG.getCheckedRadioButtonId());
             strRemarquabilité = rbChecked.getText().toString();
         }
-        returnIntent.putExtra("Remarquabilité", strRemarquabilité);
+        this.réponses.put("Remarquabilité", strRemarquabilité);
 
         // Observations
-        returnIntent.putExtra("Observations", ((EditText) findViewById(R.id.ObservationsTxtEd)).getText().toString() );
+        this.réponses.put("Observations", ((EditText) findViewById(R.id.ObservationsTxtEd)).getText().toString() );
 
         // Verification Infos Botaniste
         RadioGroup verifBotanisteRG = (RadioGroup) findViewById(R.id.VerifBotanisteRG);
@@ -217,13 +224,47 @@ public class Quiz extends AppCompatActivity {
             RadioButton rbChecked = (RadioButton) findViewById(verifBotanisteRG.getCheckedRadioButtonId());
             strVerifBotaniste = rbChecked.getText().toString();
         }
-        returnIntent.putExtra("Vérification Infos Botaniste", strVerifBotaniste);
+        this.réponses.put("VérifBotaniste", strVerifBotaniste);
+        returnIntent.putExtra("VérifBotaniste", strVerifBotaniste);
 
         // Date
-        returnIntent.putExtra("Date", ((EditText) findViewById(R.id.DateEd)).getText().toString() );
+        this.réponses.put("Date", ((EditText) findViewById(R.id.DateEd)).getText().toString() );
 
-        setResult(Activity.RESULT_OK, returnIntent);
-        finish();
+        // Check for mandatory answers
+        Boolean allAnswered = true;
+        for( String s : this.obligatoires ){
+            if ( this.réponses.get(s) == null || this.réponses.get(s).equals("") )
+                allAnswered = false;
+        }
+
+        // Check for Date not posterior to today
+        Boolean correctDate = true;
+        Calendar newDate = Calendar.getInstance();
+        String dateToday = dateFormatter.format(newDate.getTime());
+        String dateEntered = this.réponses.get("Date");
+        String[] dateTodaySplitted = dateToday.split("-");
+        String[] dateEnteredSplitted = dateEntered.split("-");
+        for ( int i = 0; i < dateTodaySplitted.length; i ++){
+            int tempIntToday = Integer.parseInt(dateTodaySplitted[i]);
+            int tempIntEntered = Integer.parseInt(dateEnteredSplitted[i]);
+            if ( tempIntToday < tempIntEntered )
+                correctDate = false;
+        }
+
+        if ( allAnswered && correctDate ){
+            for( String s : intitulesQuestions ){
+                returnIntent.putExtra(s, this.réponses.get(s));
+            }
+            setResult(Activity.RESULT_OK, returnIntent);
+            finish();
+        } else {
+            String strError = "";
+            if ( ! allAnswered )
+                strError += "Il faut répondre à toutes les réponses obligatoires !\n";
+            if ( ! correctDate )
+                strError += "La date entrée est supérieur à celle d'aujourd'hui, vous êtes dans le futur ?";
+            Toast.makeText(this, strError, Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void deployDate(android.view.View v){

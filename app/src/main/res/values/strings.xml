@@ -15,7 +15,7 @@
     <string name="QuestionLongitude">Entrez votre Longitude</string>
     <string name="QuestionAddresse">Addresse de l\'arbre (Obligatoire)</string>
     <string name="QuestionObservations">Avez-vous des Observations ?</string>
-    <string name="QuestionEmplacement">Sur quel emplacement est cet arbre ?</string>
+    <string name="QuestionEmplacement">Sur quel emplacement est cet arbre ? (Obligatoire)</string>
     <string name="QuestionRemarquabilité">Remarquabilité (Obligatoire)</string>
     <string name="QuestionVerifBotaniste">Informations vérifiées sur site par un botaniste ? (Obligatoire)</string>
     <string name="QuestionRemarquable">Remarquable</string>

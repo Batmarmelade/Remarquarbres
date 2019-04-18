@@ -28,6 +28,7 @@
             android:text="@string/QuestionsGen" />
 
         <LinearLayout
+            android:id="@+id/NomLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -49,6 +50,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/PseudoLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -78,6 +80,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/MailLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -107,6 +110,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/ArbresLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -246,6 +250,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/BotaniqueLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -276,6 +281,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/LatitudeLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -306,6 +312,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/LongitudeLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -336,6 +343,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/AddresseLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -366,6 +374,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/EmplacementLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -410,6 +419,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/RemarquableLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -485,6 +495,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/BiodiversitéLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -554,6 +565,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/RemarquabilitéLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -605,6 +617,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/ObservationsLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -628,6 +641,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/VerifBotanisteLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -665,6 +679,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/DateLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
