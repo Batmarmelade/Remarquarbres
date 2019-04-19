@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Remarquarbres</string>
+
+    <string name="buton">Photo</string>
+    <string name="text">Map</string>
+    <string name="txt">Quiz</string>
+    <string name="txt1">Copyright</string>
 </resources>
