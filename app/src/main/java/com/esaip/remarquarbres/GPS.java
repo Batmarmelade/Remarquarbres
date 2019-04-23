@@ -1,3 +1,4 @@
+
 package com.esaip.remarquarbres;
 
 import android.Manifest;
@@ -78,7 +79,7 @@ public class GPS extends AppCompatActivity {
 
                     if (isGPSEnabled) {
                         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 6000, 10, listener);
-                        Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+                        //Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
                     } else {
                         Toast.makeText(GPS.this, "Le GPS est désactivé", Toast.LENGTH_LONG).show();
                     }
