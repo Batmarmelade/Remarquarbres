@@ -1,6 +1,8 @@
 package com.esaip.remarquarbres;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -57,16 +59,26 @@ private String urlServeur="https://requestbin.fullcontact.com/1mbiedi1?inspect";
             @Override
             public void onClick(View view) {
                 String FilePath = context.getFilesDir() + "/" + "hello.txt";
-                String FileLocation = "";
+                String FileLocation = "quelqueChose.zip";
                 //Les filepath et location sont à changer
                 zipFileAtPath(FilePath, FileLocation);
-
+                File zipped = new File(FileLocation);
+                composeEmail("arbresanjou@netc.fr", "Recensement arbre remarquable", Uri.fromFile(zipped));
 
             }
         });
     }
 
-
+    public void composeEmail(String adresse, String subject, Uri attachment) {
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("*/*");
+        intent.putExtra(Intent.EXTRA_EMAIL, adresse);
+        intent.putExtra(Intent.EXTRA_SUBJECT, subject);
+        intent.putExtra(Intent.EXTRA_STREAM, attachment);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
+    }
     public boolean zipFileAtPath(String sourcePath, String toLocation) {
         final int BUFFER = 2048;
 
