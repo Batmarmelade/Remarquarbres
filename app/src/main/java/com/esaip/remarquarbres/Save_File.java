@@ -64,6 +64,7 @@ private String urlServeur="https://requestbin.fullcontact.com/1mbiedi1?inspect";
                 zipFileAtPath(FilePath, FileLocation);
                 File zipped = new File(FileLocation);
                 composeEmail("arbresanjou@netc.fr", "Recensement arbre remarquable", Uri.fromFile(zipped));
+                //intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(new File("/path/to/file")));
 
             }
         });
