@@ -3,4 +3,102 @@
     <string name="bt_photo">Prendre une photo</string>
     <string name="no_camera">Pas de camera disponible</string>
     <string name="no_camera_permission">Permissions insuffisantes</string>
+    <string name="testStr">Testing ...</string>
+    <string name="SubmitButton"> Envoyer ! </string>
+
+
+    <!-- Questions Quiz -->
+    <string name="QuestionsGen">Pour pouvoir avoir un peu plus d\'informations, veuillez renseigner les champs suivants</string>
+    <string name="QuestionNom">Votre nom et prénom ( Obligatoire )</string>
+    <string name="QuestionPseudo">Nom à afficher</string>
+    <string name="QuestionMail">Votre addresse mail</string>
+    <string name="QuestionArbres">Nom de l\'arbre</string>
+    <string name="QuestionBotanique">Nom Botanique</string>
+    <string name="QuestionLatitude">Entrez votre Latitude</string>
+    <string name="QuestionLongitude">Entrez votre Longitude</string>
+    <string name="QuestionAddresse">Addresse de l\'arbre (Obligatoire)</string>
+    <string name="QuestionObservations">Avez-vous des Observations ?</string>
+    <string name="QuestionEmplacement">Sur quel emplacement est cet arbre ? (Obligatoire)</string>
+    <string name="QuestionRemarquabilité">Remarquabilité (Obligatoire)</string>
+    <string name="QuestionVerifBotaniste">Informations vérifiées sur site par un botaniste ? (Obligatoire)</string>
+    <string name="QuestionRemarquable">Remarquable</string>
+    <string name="QuestionBiodiversité">Biodiversité</string>
+    <string name="QuestionDate">Date (Obligatoire)</string>
+
+    <!-- Aides -->
+    <string name="AidePseudo">Vous pouvez mettre ici un pseudonyme qui ne servira que pour l\'affichage</string>
+    <string name="AideMail">Pour vous contacter si nécessaire (exclusivement)</string>
+    <string name="AideArbres">Connaissez-vous cet arbre ? Si oui, complétez</string>
+    <string name="AideBotanique">Entrez le nom botanique, si vous le connaissez</string>
+    <string name="AideCoordonées">De préférence au format décimal</string>
+    <string name="AideAddresse">N°, rue, ville</string>
+    <string name="AideRemarquabilité">Globalement, cet arbre est pour vous (Cochez votre choix)</string>
+    <string name="AideRemarquable">Cet arbre est remarquable du fait de (Cochez)</string>
+    <string name="AideBiodiversité">Si vous savez que cet arbre héberge un ou plusieurs spécimens d\'espèce protégée, cochez.</string>
+    <string name="AideDate">Date de l\'inventaire</string>
+
+    <!-- Hints -->
+    <string name="HintNom">Ex: Pierre Dupont</string>
+    <string name="HintPseudo">Ex: Pierrot La Lune</string>
+    <string name="HintMail">Ex: pierre.dupont@exemple.fr</string>
+    <string name="HintArbresAutre">Spécifiez ici le nom de l\'arbre</string>
+    <string name="HintBotanique">Ex: Quercus petraea</string>
+    <string name="HintLatitude">Ex: 47,123456789</string>
+    <string name="HintLongitude">Ex: -1,123456789</string>
+    <!-- Le 39 Rue Boreau, Angers est l'addresse du Jardin des Plantes -->
+    <string name="HintAddresse">Ex: 39 Rue Boreau, Angers</string>
+    <string name="HintObservations">Mettez ici vos observations</string>
+    <string name="HintRemarquableAutre">Spécifiez ce que vous trouvez remarquable</string>
+    <string name="HintBiodiversitéAutre">Spécifiez les espèces protégées</string>
+    <string name="HintDate">Rentrez Votre Date ici</string>
+
+    <!-- Choix Arbres -->
+    <string name="Arbre1">Chêne</string>
+    <string name="Arbre2">Frêne</string>
+    <string name="Arbre3">Peuplier</string>
+    <string name="Arbre4">Pin</string>
+    <string name="Arbre5">Cèdre</string>
+    <string name="Arbre6">Érable</string>
+    <string name="Arbre7">Séquoia</string>
+    <string name="Arbre8">Platane</string>
+    <string name="Arbre9">Marronier</string>
+    <string name="Arbre10">Châtaigner</string>
+    <string name="Arbre11">Hêtre</string>
+    <string name="Arbre12">Magnolia</string>
+    <string name="Arbre13">Tilleul</string>
+    <string name="ArbreAutre">Autre</string>
+    <string name="ArbreAutreSelected">Autre, précisez :</string>
+
+    <!-- Choix Emplacement -->
+    <string name="Emplacement1">Un espace public</string>
+    <string name="Emplacement2">Un espace privé</string>
+    <string name="Emplacement3">Je ne sais pas</string>
+
+    <!-- Choix Remarquable -->
+    <string name="Remarquable1">Sa hauteur</string>
+    <string name="Remarquable2">Il est imposant</string>
+    <string name="Remarquable3">Son ancienneté (plus de 50 ans)</string>
+    <string name="Remarquable4">Sa rareté à Angers</string>
+    <string name="Remarquable5">Marquant dans le paysage</string>
+    <string name="Remarquable6">La mise en valeur mutuelle bati-végétal</string>
+    <string name="RemarquableAutre">Autre</string>
+    <string name="RemarquableAutreSelected">Autre, précisez :</string>
+
+    <!-- Choix Biodiversité -->
+    <string name="Biodiversité1">Un écureuil roux</string>
+    <string name="Biodiversité2">Une chauve-souris</string>
+    <string name="Biodiversité3">Un capricorne</string>
+    <string name="Biodiversité4">Une chouette hulotte</string>
+    <string name="Biodiversité5">Un pic vert, noir, ...</string>
+    <string name="BiodiversitéAutre">Autre</string>
+    <string name="BiodiversitéAutreSelected">Autre, précisez :</string>
+
+    <!-- Choix Remarquabilité -->
+    <string name="Remarquabilité1">Très remarquable ou exceptionnel</string>
+    <string name="Remarquabilité2">Remarquable ou majestueux</string>
+    <string name="Remarquabilité3">Notoire, un repère à l\'échelle de votre quartier</string>
+
+    <!-- Choix Vérification Infos Botaniste -->
+    <string name="oui">Oui</string>
+    <string name="non">Non</string>
 </resources>

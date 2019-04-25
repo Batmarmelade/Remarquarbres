@@ -1,0 +1,731 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Quiz">
+
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:id="@+id/progress_1"
+        android:layout_height="5dp"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView"/>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        app:layout_constraintTop_toBottomOf="@+id/progress_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/QuestionsGen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="30dp"
+            android:gravity="center"
+            android:text="@string/QuestionsGen" />
+
+        <LinearLayout
+            android:id="@+id/NomLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/QuestionNomTxtVw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/QuestionNom" />
+
+            <EditText
+                android:id="@+id/NomTxtEd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/HintNom"
+                android:inputType="textPersonName" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/PseudoLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/QuestionPseudoTxtVw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="@string/QuestionPseudo" />
+
+            <TextView
+                android:id="@+id/AidePseudoTxtVw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/darker_gray"
+                android:text="@string/AidePseudo" />
+
+            <EditText
+                android:id="@+id/PseudoTxtEd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/HintPseudo"
+                android:inputType="textPersonName" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/MailLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/QuestionMailTxtVw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="@string/QuestionMail" />
+
+            <TextView
+                android:id="@+id/AideMailTxtVw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/darker_gray"
+                android:text="@string/AideMail" />
+
+            <EditText
+                android:id="@+id/MailTxtEd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/HintMail"
+                android:inputType="textWebEmailAddress" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ArbresLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/QuestionArbreTxtVw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="@string/QuestionArbres" />
+
+            <TextView
+                android:id="@+id/AideArbresTxtVw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/darker_gray"
+                android:text="@string/AideArbres" />
+
+            <RadioGroup
+                android:id="@+id/ArbresRG"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/ArbresChoix1rb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/Arbre1" />
+
+                <RadioButton
+                    android:id="@+id/ArbresChoix2rb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/Arbre2" />
+
+                <RadioButton
+                    android:id="@+id/ArbresChoix3rb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/Arbre3" />
+
+                <RadioButton
+                    android:id="@+id/ArbresChoix4rb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/Arbre4" />
+
+                <RadioButton
+                    android:id="@+id/ArbresChoix5rb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/Arbre5" />
+
+                <RadioButton
+                    android:id="@+id/ArbresChoix6rb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/Arbre6" />
+
+                <RadioButton
+                    android:id="@+id/ArbresChoix7rb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/Arbre7" />
+
+                <RadioButton
+                    android:id="@+id/ArbresChoix8rb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/Arbre8" />
+
+                <RadioButton
+                    android:id="@+id/ArbreChoix9rb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/Arbre9" />
+
+                <RadioButton
+                    android:id="@+id/ArbresChoix10rb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/Arbre10" />
+
+                <RadioButton
+                    android:id="@+id/ArbresChoix11rb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/Arbre11" />
+
+                <RadioButton
+                    android:id="@+id/ArbresChoix12rb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/Arbre12" />
+
+                <RadioButton
+                    android:id="@+id/ArbresChoix13rb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/Arbre13" />
+
+                <RadioButton
+                    android:id="@+id/ArbresChoixAutreRb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/ArbreAutre" />
+
+            </RadioGroup>
+
+            <EditText
+                android:id="@+id/ArbresAutreEd"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="@string/HintArbresAutre"
+                android:inputType="textPersonName"
+                android:text=""
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/BotaniqueLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/QuestionBotaniqueTxtVw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="@string/QuestionBotanique" />
+
+            <TextView
+                android:id="@+id/AideBotaniqueTxtVw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/darker_gray"
+                android:text="@string/AideBotanique" />
+
+            <EditText
+                android:id="@+id/BotaniqueTxtEd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/HintBotanique"
+                android:inputType="textPersonName" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/LatitudeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/QuestionLatitudeTxtVw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="@string/QuestionLatitude" />
+
+            <TextView
+                android:id="@+id/AideCoordonéesLatitudeTxtVw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/darker_gray"
+                android:text="@string/AideCoordonées" />
+
+            <EditText
+                android:id="@+id/LatitudeTxtEd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/HintLatitude"
+                android:inputType="textPersonName" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/LongitudeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/QuestionLongitudeTxtVw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="@string/QuestionLongitude" />
+
+            <TextView
+                android:id="@+id/AideCoordonéesLongitudeTxtVw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/darker_gray"
+                android:text="@string/AideCoordonées" />
+
+            <EditText
+                android:id="@+id/LongitudeTxtEd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/HintLongitude"
+                android:inputType="textPersonName" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/AddresseLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/QuestionAddresseTxtVw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="@string/QuestionAddresse" />
+
+            <TextView
+                android:id="@+id/AideAddresseTxtVw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/darker_gray"
+                android:text="@string/AideAddresse" />
+
+            <EditText
+                android:id="@+id/AddresseTxtEd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/HintAddresse"
+                android:inputType="textPostalAddress" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/EmplacementLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/QuestionEmplacementTxtVw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="@string/QuestionEmplacement" />
+
+            <RadioGroup
+                android:id="@+id/EmplacementsRG"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/EmplacementChoix1rb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/Emplacement1" />
+
+                <RadioButton
+                    android:id="@+id/EmplacementChoix2rb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/Emplacement2" />
+
+                <RadioButton
+                    android:id="@+id/EmplacementChoix3rb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/Emplacement3" />
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/RemarquableLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/QuestionRemarquableTxtVw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="@string/QuestionRemarquable" />
+
+            <TextView
+                android:id="@+id/AideRemarquableTxtVw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/darker_gray"
+                android:text="@string/AideRemarquable" />
+
+            <CheckBox
+                android:id="@+id/Remarquable1ChBx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Remarquable1"/>
+
+            <CheckBox
+                android:id="@+id/Remarquable2ChBx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Remarquable2"/>
+
+            <CheckBox
+                android:id="@+id/Remarquable3ChBx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Remarquable3"/>
+
+            <CheckBox
+                android:id="@+id/Remarquable4ChBx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Remarquable4"/>
+
+            <CheckBox
+                android:id="@+id/Remarquable5ChBx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Remarquable5"/>
+
+            <CheckBox
+                android:id="@+id/Remarquable6ChBx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Remarquable6"/>
+
+            <CheckBox
+                android:id="@+id/RemarquableAutreChBx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/RemarquableAutre"/>
+
+            <EditText
+                android:id="@+id/RemarquableAutreEd"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="@string/HintRemarquableAutre"
+                android:inputType="textPersonName"
+                android:text=""
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/BiodiversitéLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/QuestionBiodiversitéTxtVw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="@string/QuestionBiodiversité" />
+
+            <TextView
+                android:id="@+id/AideBiodiversitéTxtVw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/darker_gray"
+                android:text="@string/AideBiodiversité" />
+
+            <CheckBox
+                android:id="@+id/Biodiversité1ChBx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Biodiversité1"/>
+
+            <CheckBox
+                android:id="@+id/Biodiversité2ChBx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Biodiversité2"/>
+
+            <CheckBox
+                android:id="@+id/Biodiversité3ChBx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Biodiversité3"/>
+
+            <CheckBox
+                android:id="@+id/Biodiversité4ChBx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Biodiversité4"/>
+
+            <CheckBox
+                android:id="@+id/Biodiversité5ChBx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Biodiversité5"/>
+
+            <CheckBox
+                android:id="@+id/BiodiversitéAutreChBx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/BiodiversitéAutre"/>
+
+            <EditText
+                android:id="@+id/BiodiversitéAutreEd"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="@string/HintBiodiversitéAutre"
+                android:inputType="textPersonName"
+                android:text=""
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/RemarquabilitéLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/QuestionRemarquabilitéTxtVw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="@string/QuestionRemarquabilité" />
+
+            <TextView
+                android:id="@+id/AideRemarquabilitéTxtVw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/darker_gray"
+                android:text="@string/AideRemarquabilité" />
+
+            <RadioGroup
+                android:id="@+id/RemarquabilitésRG"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/RemarquabilitéChoix1rb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/Remarquabilité1" />
+
+                <RadioButton
+                    android:id="@+id/RemarquabilitéChoix2rb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/Remarquabilité2" />
+
+                <RadioButton
+                    android:id="@+id/RemarquabilitéChoix3rb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/Remarquabilité3" />
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ObservationsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/QuestionObservationsTxtVw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="@string/QuestionObservations" />
+
+            <EditText
+                android:id="@+id/ObservationsTxtEd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/HintObservations"
+                android:inputType="text|textMultiLine" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/VerifBotanisteLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/QuestionVerifBotanisteTxtVw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="@string/QuestionVerifBotaniste" />
+
+            <RadioGroup
+                android:id="@+id/VerifBotanisteRG"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/VerifBotanisteChoix1rb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/oui" />
+
+                <RadioButton
+                    android:id="@+id/VerifBotanisteChoix2rb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/non" />
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/DateLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/QuestionDateTxtVw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="@string/QuestionDate" />
+
+            <TextView
+                android:id="@+id/AideDateTxtVw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/darker_gray"
+                android:text="@string/AideDate" />
+
+            <EditText
+                android:id="@+id/DateEd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="deployDate"
+                android:text="@string/HintDate"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/SubmitButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="submit"
+            android:text="@string/SubmitButton" />
+
+
+            </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>
