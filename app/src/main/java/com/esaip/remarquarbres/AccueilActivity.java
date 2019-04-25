@@ -18,8 +18,10 @@ public class AccueilActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_accueil);
-        Intent intent = new Intent(this, GPS.class);
-        startActivityForResult(intent, 2);
+
+        Intent i = new Intent(this,PhotoActivity.class);
+        startActivity(i);
+
     }
 
 
