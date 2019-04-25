@@ -47,7 +47,7 @@ public class GPS extends AppCompatActivity {
             public void onLocationChanged(Location location) {
                 double longitude = location.getLongitude();
                 double latitude = location.getLatitude();
-                t.setText("Longitude : " + longitude + "\n" + "Latitude : " + latitude);
+                t.setText("Longitude : " + longitude + "\n" + "Latitude : " + latitude); // écrit les coordonnées dans la textbox
             }
 
             public void onStatusChanged(String s, int i, Bundle bundle) {
@@ -67,19 +67,19 @@ public class GPS extends AppCompatActivity {
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(ContextCompat.checkSelfPermission(GPS.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                if(ContextCompat.checkSelfPermission(GPS.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) { //vérifie si l'application peut utiliser le GPS
                     Toast.makeText(GPS.this,"en attente de la permission pour utiliser le GPS", Toast.LENGTH_SHORT).show();
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                         requestPermissions(new String[]{Manifest.permission.ACCESS_COARSE_LOCATION,Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.INTERNET}
-                                ,10);
+                                ,10); //demande la permission d'accéder aux coordonnées GPS
                     }
                 } else {
                     locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
                     boolean isGPSEnabled = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
 
-                    if (isGPSEnabled) {
-                        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 6000, 10, listener);
-                        //Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+                    if (isGPSEnabled) { //vérifie si le GPS est alumé
+                        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 6000, 10, listener); //appelle la fonction OnLocationChange de listener
+                        //Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER); //enregistre la location dans un objet location
                     } else {
                         Toast.makeText(GPS.this, "Le GPS est désactivé", Toast.LENGTH_LONG).show();
                     }
