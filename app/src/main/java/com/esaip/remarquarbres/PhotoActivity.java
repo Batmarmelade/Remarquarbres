@@ -49,7 +49,7 @@ public class PhotoActivity extends AppCompatActivity {
         if(requestCode == REQUEST_TAKE_PHOTO && resultCode == Activity.RESULT_OK){
 
             Bitmap bitmap = BitmapFactory.decodeFile(currentPhotoPath);
-            bitmap = RotateBitmap(bitmap,270);
+            bitmap = RotateBitmap(bitmap,90);
             iv_photo.setImageBitmap(bitmap);
             galleryAddPic();
         }
