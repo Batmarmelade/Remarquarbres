@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">Remarquarbres</string>
+
+    <string name="buton">Photo</string>
+    <string name="text">Map</string>
+    <string name="txt">Quiz</string>
+    <string name="txt1">Copyright</string>
     <string name="bt_photo">Prendre une photo</string>
     <string name="no_camera">Pas de camera disponible</string>
     <string name="no_camera_permission">Permissions insuffisantes</string>
