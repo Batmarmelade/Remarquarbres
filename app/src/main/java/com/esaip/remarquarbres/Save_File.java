@@ -22,7 +22,6 @@ public class Save_File extends AppCompatActivity {
 private Button create;
 private Button send;
 private Context context;
-private String urlServeur="https://requestbin.fullcontact.com/1mbiedi1?inspect";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
