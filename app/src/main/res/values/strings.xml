@@ -10,6 +10,7 @@
     <string name="no_camera_permission">Permissions insuffisantes</string>
     <string name="testStr">Testing ...</string>
     <string name="SubmitButton"> Envoyer ! </string>
+    <string name="bt_photo_quiz">Passer au questionnaire</string>
 
 
     <!-- Questions Quiz -->

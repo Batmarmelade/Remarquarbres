@@ -24,5 +24,13 @@
             android:layout_height="wrap_content"
             android:text="@string/bt_photo"
             android:onClick="changePhoto"/>
+
+        <Button
+            android:id="@+id/BT_photo_quiz"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/bt_photo_quiz"
+            android:visibility="invisible"
+            android:onClick="gotoquiz"/>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

@@ -32,6 +32,7 @@ public class PhotoActivity extends AppCompatActivity {
     String currentPhotoPath;
     Button bt_photo;
     ImageView iv_photo;
+    Button bt_photo_quiz;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +40,7 @@ public class PhotoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_photo);
         bt_photo = findViewById(R.id.BT_photo_take);
         iv_photo = findViewById(R.id.IV_photo_image);
+        bt_photo_quiz = findViewById(R.id.BT_photo_quiz);
 
     }
 
@@ -47,7 +49,7 @@ public class PhotoActivity extends AppCompatActivity {
         if(requestCode == REQUEST_TAKE_PHOTO && resultCode == Activity.RESULT_OK){
 
             Bitmap bitmap = BitmapFactory.decodeFile(currentPhotoPath);
-            bitmap = RotateBitmap(bitmap,90);
+            bitmap = RotateBitmap(bitmap,270);
             iv_photo.setImageBitmap(bitmap);
             galleryAddPic();
         }
@@ -119,6 +121,11 @@ public class PhotoActivity extends AppCompatActivity {
         Uri contentUri = Uri.fromFile(f);
         mediaScanIntent.setData(contentUri);
         this.sendBroadcast(mediaScanIntent);
+        bt_photo_quiz.setVisibility(View.VISIBLE);
+
+    }
+    public void gotoquiz(View view){
+        startActivity(new Intent(getApplicationContext(),Quiz.class));
     }
 
 }

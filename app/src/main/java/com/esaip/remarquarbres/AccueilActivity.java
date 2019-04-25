@@ -1,18 +1,11 @@
 package com.esaip.remarquarbres;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.TextView;
-import android.widget.Toast;
-import android.support.v7.widget.CardView;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-
-import java.util.Iterator;
-import java.util.Set;
 
 public class AccueilActivity extends AppCompatActivity {
 
@@ -37,7 +30,7 @@ public class AccueilActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent testIntent = new Intent(AccueilActivity.this, Test.class );
+                Intent testIntent = new Intent(AccueilActivity.this, PhotoActivity.class );
                 startActivity(testIntent);
             }
         });
