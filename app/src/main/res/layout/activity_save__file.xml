@@ -7,6 +7,7 @@
     tools:context=".Save_File">
 
     <Button
+
         android:id="@+id/send"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -27,9 +28,9 @@
         android:layout_marginTop="76dp"
         android:text="@string/AlerteEnvoi"
         android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+		/>
+
+
 
     <TextView
         android:id="@+id/AlerteMail2"
@@ -43,4 +44,5 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/send" />
+
 </android.support.constraint.ConstraintLayout>

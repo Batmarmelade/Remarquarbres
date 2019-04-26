@@ -1,25 +1,13 @@
 package com.esaip.remarquarbres;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageButton;
-import android.widget.ImageView;
+import android.widget.Button;
 
 public class AccueilActivity extends AppCompatActivity {
-
-    private ImageButton img;
-    private ImageButton mQuiz;
-    private ImageButton imap;
-    private ImageView mcopy;
-
-    public final static int code = 1337;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_accueil);
+private Button button;
 
         img = findViewById(R.id.img);
         mQuiz = findViewById(R.id.mQuiz);
@@ -58,6 +46,7 @@ public class AccueilActivity extends AppCompatActivity {
                 startActivity(testIntent);
             }
         });*/
+
 
     }
 
