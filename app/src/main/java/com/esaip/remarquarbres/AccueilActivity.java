@@ -35,7 +35,7 @@ public class AccueilActivity extends AppCompatActivity {
             }
         });
 
-        mQuiz.setOnClickListener(new View.OnClickListener() {
+        /*mQuiz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent testIntent = new Intent(AccueilActivity.this, Test.class );
@@ -57,7 +57,7 @@ public class AccueilActivity extends AppCompatActivity {
                 Intent testIntent = new Intent(AccueilActivity.this, Test.class );
                 startActivity(testIntent);
             }
-        });
+        });*/
 
     }
 

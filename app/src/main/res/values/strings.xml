@@ -107,4 +107,10 @@
     <!-- Choix Vérification Infos Botaniste -->
     <string name="oui">Oui</string>
     <string name="non">Non</string>
+
+
+    <!--Envoi des données -->
+    <string name="AlerteEnvoi">Nous allons envoyer vos réponses par mail à l\'association Sauvegarde de l\'Anjou</string>
+    <string name="AlerteEnvoi2">Après avoir cliqué sur ce bouton, vous pourrez sélectionner l\'application à utiliser pour envoyer le mail</string>
+    <string name="ValidationEnvoi">Valider l\'envoi des données</string>
 </resources>
