@@ -43,3 +43,4 @@ app/gradlew
 app/gradlew\.bat
 
 app/local\.properties
+.idea/misc.xml

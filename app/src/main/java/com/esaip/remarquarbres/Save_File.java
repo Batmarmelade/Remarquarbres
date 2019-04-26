@@ -19,7 +19,6 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
 public class Save_File extends AppCompatActivity {
-private Button create;
 private Button send;
 private Context context;
 
@@ -28,32 +27,7 @@ private Context context;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_save__file);
 
-        create = (Button) findViewById(R.id.create_file);
         send = (Button) findViewById(R.id.send);
-//Pour l'instant les fichiers sont montés sur le stockage interne de l'application (inaccessible par le reste du téléphone)
-        create.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String fileName = "hello.txt";
-                String content = "hello world";
-
-                FileOutputStream outputStream = null;
-                try {
-                    outputStream = openFileOutput(fileName, Context.MODE_PRIVATE);
-                    outputStream.write(content.getBytes());
-                    outputStream.close();
-
-                    Context contexte = getApplicationContext();
-                    CharSequence text = "Succès!";
-                    int duration = Toast.LENGTH_SHORT;
-
-                    Toast toast = Toast.makeText(contexte, text, duration);
-                    toast.show();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
         send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

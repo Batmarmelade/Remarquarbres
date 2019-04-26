@@ -33,6 +33,7 @@ public class PhotoActivity extends AppCompatActivity {
     Button bt_photo;
     ImageView iv_photo;
     Button bt_photo_quiz;
+    private String nomDossier;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,6 +91,15 @@ public class PhotoActivity extends AppCompatActivity {
                 startActivityForResult(takePictureIntent, REQUEST_TAKE_PHOTO);
             }
         }
+    }
+
+
+    public void setNomDossier(String nomDossier) {
+        this.nomDossier = nomDossier;
+    }
+
+    public String getNomDossier() {
+        return nomDossier;
     }
 
     private File createImageFile() throws IOException {
