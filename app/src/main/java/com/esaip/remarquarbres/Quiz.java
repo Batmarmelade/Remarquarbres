@@ -35,6 +35,7 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -261,9 +262,9 @@ public class Quiz extends AppCompatActivity {
                 if ( i == R.id.RemarquableAutreChBx ) {
                     EditText remarquableAutreEd = (EditText) findViewById(R.id.RemarquableAutreEd);
                     if ( ! remarquableAutreEd.getText().toString().equals("") )
-                        strRemarquable += remarquableAutreEd.getText().toString() + ";";
+                        strRemarquable += remarquableAutreEd.getText().toString() + ",";
                 } else {
-                    strRemarquable += temp.getText() + ";";
+                    strRemarquable += temp.getText() + ",";
                 }
             }
         }
@@ -279,9 +280,9 @@ public class Quiz extends AppCompatActivity {
                 if ( i == R.id.BiodiversitéAutreChBx ) {
                     EditText biodiversitéAutreEd = (EditText) findViewById(R.id.BiodiversitéAutreEd);
                     if ( ! biodiversitéAutreEd.getText().toString().equals("") )
-                        strBiodiversité += biodiversitéAutreEd.getText().toString() + ";";
+                        strBiodiversité += biodiversitéAutreEd.getText().toString() + ",";
                 } else {
-                    strBiodiversité += temp.getText() + ";";
+                    strBiodiversité += temp.getText() + ",";
                 }
             }
         }
@@ -345,7 +346,7 @@ public class Quiz extends AppCompatActivity {
                 strError += "La date entrée est supérieure à celle d'aujourd'hui, vous êtes dans le futur ?";
             Toast.makeText(this, strError, Toast.LENGTH_SHORT).show();
         }
-        //Ajout de la création de CSV
+
 
     }
 

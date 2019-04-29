@@ -22,18 +22,23 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class PhotoActivity extends AppCompatActivity {
 
     static final int REQUEST_TAKE_PHOTO = 71;
-    String currentPhotoPath;
+    static String currentPhotoPath;
     Button bt_photo;
     ImageView iv_photo;
     Button bt_photo_quiz;
-    private String nomDossier;
+    static private String timeStamp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,18 +98,13 @@ public class PhotoActivity extends AppCompatActivity {
         }
     }
 
-
-    public void setNomDossier(String nomDossier) {
-        this.nomDossier = nomDossier;
-    }
-
-    public String getNomDossier() {
-        return nomDossier;
+    static public String getTimeStamp(){
+        return timeStamp;
     }
 
     private File createImageFile() throws IOException {
         // Create an image file name
-        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+        timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         String imageFileName = "JPEG_" + timeStamp + "_";
         File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
         File image = File.createTempFile(
@@ -137,5 +137,6 @@ public class PhotoActivity extends AppCompatActivity {
     public void gotoquiz(View view){
         startActivity(new Intent(getApplicationContext(),Quiz.class));
     }
+
 
 }
