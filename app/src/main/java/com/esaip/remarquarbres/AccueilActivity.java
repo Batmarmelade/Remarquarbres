@@ -3,13 +3,10 @@ package com.esaip.remarquarbres;
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
-
 import android.net.Uri;
-
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
-
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -26,16 +23,10 @@ public class AccueilActivity extends AppCompatActivity {
 
     public final static int code = 1337;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_accueil);
-
-
-
-        Intent i = new Intent(this,PhotoActivity.class);
-        startActivity(i);
 
         img = findViewById(R.id.img);
         mQuiz = findViewById(R.id.mQuiz);
@@ -74,47 +65,8 @@ public class AccueilActivity extends AppCompatActivity {
             }
         });
 
-
-        img = findViewById(R.id.img);
-        mQuiz = findViewById(R.id.mQuiz);
-        imap = findViewById(R.id.imap);
-        mcopy = findViewById(R.id.mCopy);
-
-        img.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent testIntent = new Intent(AccueilActivity.this, Test.class );
-                startActivity(testIntent);
-            }
-        });
-
-        mQuiz.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent testIntent = new Intent(AccueilActivity.this, Test.class );
-                startActivity(testIntent);
-            }
-        });
-
-        imap.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent testIntent = new Intent(AccueilActivity.this, Test.class );
-                startActivity(testIntent);
-            }
-        });
-
-        mcopy.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent testIntent = new Intent(AccueilActivity.this, Test.class );
-                startActivity(testIntent);
-            }
-        });
-
-
     }
+
 
 
     public void openWebPage(String url) {

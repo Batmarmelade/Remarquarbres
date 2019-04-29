@@ -1,13 +1,10 @@
 <resources>
     <string name="app_name">Remarquarbres</string>
 
-<<<<<<< HEAD
-=======
     <string name="buton">Photo</string>
     <string name="text">Map</string>
     <string name="txt">Quiz</string>
     <string name="txt1">Copyright</string>
->>>>>>> 323eb7f0a5ebb08a0fbb5f6fa4299296858ea146
     <string name="bt_photo">Prendre une photo</string>
     <string name="no_camera">Pas de camera disponible</string>
     <string name="no_camera_permission">Permissions insuffisantes</string>
@@ -110,11 +107,4 @@
     <!-- Choix Vérification Infos Botaniste -->
     <string name="oui">Oui</string>
     <string name="non">Non</string>
-
-
-    <string name="buton">Photo</string>
-    <string name="text">Map</string>
-    <string name="txt">Quiz</string>
-    <string name="txt1">Copyright</string>
-
 </resources>
