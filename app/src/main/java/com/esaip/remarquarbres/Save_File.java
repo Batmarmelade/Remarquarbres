@@ -31,7 +31,7 @@ import java.util.zip.ZipOutputStream;
 
 public class Save_File extends AppCompatActivity {
 private Button send;
-private Context context;
+private Context context = getApplicationContext();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,13 +81,14 @@ private Context context;
                 }
 
             out.close();
+            Toast zipOk = Toast.makeText(context, "Fichier zippé", Toast.LENGTH_SHORT);
+            zipOk.show();
         } catch (Exception e) {
             e.printStackTrace();
             return false;
         }
         return true;
-		Toast zipOk = Toast.makeText(getApplicationContext(), "Fichier zippé", Toast.LENGTH_SHORT);
-		toast.show();
+
     }
     public String getLastPathComponent(String filePath) {
         String[] segments = filePath.split("/");
@@ -120,6 +121,8 @@ private Context context;
             }
             in.close();
             out.close();
+            Toast FichierOk = Toast.makeText(context, "Fichier créé", Toast.LENGTH_SHORT);
+            FichierOk.show();
         } catch (FileNotFoundException fne) {
             fne.printStackTrace();
         } catch (IOException ioe) {
@@ -128,8 +131,7 @@ private Context context;
         addData(dataDir.getAbsolutePath());
         zipFileAtPath(dataDir.getAbsolutePath(), dataDir.getAbsolutePath()+".zip");
         return new File (dataDir.getAbsolutePath()+".zip");
-		Toast FichierOk = Toast.makeText(getApplicationContext(), "Fichier créé", Toast.LENGTH_SHORT);
-		toast.show();
+
     }
 
     public void addData(String path){
@@ -158,7 +160,7 @@ private Context context;
             e.printStackTrace();
         }
 		Toast CSVOk = Toast.makeText(getApplicationContext(), "CSV créé", Toast.LENGTH_SHORT);
-		toast.show();
+		CSVOk.show();
     }
 }
    /*
