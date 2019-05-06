@@ -107,4 +107,6 @@
     <!-- Choix Vérification Infos Botaniste -->
     <string name="oui">Oui</string>
     <string name="non">Non</string>
+    
+    <string name="bt_map_marker_continue">Valider et continuer</string>
 </resources>

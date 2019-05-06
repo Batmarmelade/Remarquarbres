@@ -21,6 +21,8 @@ public class AccueilActivity extends AppCompatActivity {
     private ImageView mcopy;
     private String mapURl = "https://framacarte.org/fr/map/arbres-remarquables-vus-par-angers-loire-metropole_34990#14/";
 
+    private ImageButton testMap;
+
     public final static int code = 1337;
 
     @Override
@@ -61,6 +63,15 @@ public class AccueilActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent testIntent = new Intent(AccueilActivity.this, Test.class );
+                startActivity(testIntent);
+            }
+        });
+
+        testMap = findViewById(R.id.testMap);
+        testMap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent testIntent = new Intent(AccueilActivity.this, MapSelectionActivity.class );
                 startActivity(testIntent);
             }
         });
