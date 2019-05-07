@@ -1,11 +1,8 @@
 package com.esaip.remarquarbres;
 
-import android.Manifest;
-import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
@@ -71,7 +68,7 @@ public class AccueilActivity extends AppCompatActivity {
         testMap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent testIntent = new Intent(AccueilActivity.this, MapSelectionActivity.class );
+                Intent testIntent = new Intent(AccueilActivity.this, TrackingMethodActivity.class );
                 startActivity(testIntent);
             }
         });
