@@ -24,11 +24,10 @@
         android:id="@+id/AlerteMail1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="76dp"
         android:text="@string/AlerteEnvoi"
         android:textAlignment="center"
-		/>
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="4dp" />
 
 
 
