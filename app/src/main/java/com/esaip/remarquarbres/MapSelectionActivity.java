@@ -1,6 +1,7 @@
 package com.esaip.remarquarbres;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
@@ -18,6 +19,7 @@ import org.osmdroid.views.overlay.Marker;
 
 public class MapSelectionActivity extends AppCompatActivity {
     MapView map = null;
+    GeoPoint currentPosition = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,12 +53,13 @@ public class MapSelectionActivity extends AppCompatActivity {
             @Override
             public boolean singleTapConfirmedHelper(GeoPoint p) {
 
-                marker.setPosition(p); //faudrait rafraichir un truc pour que ça lag
+                marker.setPosition(p); //faudrait rafraichir un truc pour pas que ça lag
 
                 findViewById(R.id.BT_map_selection_continue).setVisibility(View.VISIBLE);
 
                 Toast.makeText(getBaseContext(),p.getLatitude() + " - "+p.getLongitude(), Toast.LENGTH_LONG).show();
 
+                currentPosition = p;
                 return false;
             }
             @Override
@@ -66,6 +69,13 @@ public class MapSelectionActivity extends AppCompatActivity {
         };
         map.getOverlays().add(new MapEventsOverlay(mReceive));
 
+    }
+
+    public void mapContinue(View view){
+        Intent intent = new Intent(getApplicationContext(), Quiz.class);
+        intent.putExtra("Latitude",currentPosition.getLatitude());
+        intent.putExtra("Longitude",currentPosition.getLongitude());
+        startActivity(intent);
     }
 
     public void onResume(){

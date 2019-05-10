@@ -2,6 +2,7 @@ package com.esaip.remarquarbres;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
@@ -15,6 +16,7 @@ import android.widget.TextView;
 public class GPSActivity extends AppCompatActivity {
 
     TextView tv_coord;
+    Location currentPosition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,7 @@ public class GPSActivity extends AppCompatActivity {
                 ed_latitude.setText(getString(R.string.tv_latitude) + Double.toString(location.getLatitude()));
                 ed_longitude.setText(getString(R.string.tv_longitude) + Double.toString(location.getLongitude()));
                 findViewById(R.id.BT_gps_continue).setVisibility(View.VISIBLE);
+                currentPosition = location;
             }
 
             @Override
@@ -63,7 +66,15 @@ public class GPSActivity extends AppCompatActivity {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.ACCESS_COARSE_LOCATION}, 3);
         }
         else {
+            //locationManager.requestSingleUpdate(LocationManager.GPS_PROVIDER, onLocationChange,null);
             locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, onLocationChange);
         }
+    }
+
+    public void gpsContinue(View view){
+        Intent intent = new Intent(getApplicationContext(), Quiz.class);
+        intent.putExtra("Latitude",currentPosition.getLatitude());
+        intent.putExtra("Longitude",currentPosition.getLongitude());
+        startActivity(intent);
     }
 }

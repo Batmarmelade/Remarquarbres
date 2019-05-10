@@ -1,21 +1,12 @@
 package com.esaip.remarquarbres;
 
-import android.Manifest;
 import android.app.Activity;
 import android.app.DatePickerDialog;
-import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.graphics.Color;
 import android.graphics.Point;
-import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
-import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.util.Pair;
 import android.view.Display;
 import android.view.View;
 import android.view.ViewTreeObserver;
@@ -27,17 +18,12 @@ import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.ScrollView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Dictionary;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Locale;
-import java.util.Set;
 
 public class Quiz extends AppCompatActivity {
 
@@ -57,7 +43,20 @@ public class Quiz extends AppCompatActivity {
         final EditText ed_latitude = findViewById(R.id.LatitudeTxtEd);
         final EditText ed_longitude = findViewById(R.id.LongitudeTxtEd);
 
+        if (savedInstanceState == null) {
+            Bundle extras = getIntent().getExtras();
+            if(extras == null) {
 
+            } else {
+                ed_latitude.setText(Double.toString(extras.getDouble("Latitude")));
+                ed_longitude.setText(Double.toString(extras.getDouble("Longitude")));
+            }
+        } else {
+            ed_latitude.setText((String) savedInstanceState.getSerializable("Latitude"));
+            ed_longitude.setText((String) savedInstanceState.getSerializable("Longitude"));
+        }
+
+        /*
         LocationManager locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
         LocationListener onLocationChange = new LocationListener() {
             @Override
@@ -95,6 +94,7 @@ public class Quiz extends AppCompatActivity {
         else {
             locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, onLocationChange);
         }
+        */
 
         dateFormatter = new SimpleDateFormat("dd-MM-yyyy", Locale.FRANCE);
         dateEd = (EditText) findViewById(R.id.DateEd);

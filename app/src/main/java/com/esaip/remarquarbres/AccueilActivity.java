@@ -64,15 +64,6 @@ public class AccueilActivity extends AppCompatActivity {
             }
         });
 
-        testMap = findViewById(R.id.testMap);
-        testMap.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent testIntent = new Intent(AccueilActivity.this, TrackingMethodActivity.class );
-                startActivity(testIntent);
-            }
-        });
-
     }
 
 
