@@ -15,63 +15,52 @@ import android.widget.TextView;
 
 public class GPSActivity extends AppCompatActivity {
 
-    TextView tv_coord;
     Location currentPosition;
+    TextView ed_latitude;
+    TextView ed_longitude;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gps);
 
-
-        final TextView ed_latitude = findViewById(R.id.TV_gps_latitude);
-        final TextView ed_longitude = findViewById(R.id.TV_gps_longitude);
-
+        ed_latitude = findViewById(R.id.TV_gps_latitude);
+        ed_longitude = findViewById(R.id.TV_gps_longitude);
 
         LocationManager locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
         LocationListener onLocationChange = new LocationListener() {
             @Override
-            public void onLocationChanged(Location location) {
-
-                ed_latitude.setText(getString(R.string.tv_latitude) + Double.toString(location.getLatitude()));
+            public void onLocationChanged(Location location) {                                      //dès que le gps bouge
+                ed_latitude.setText(getString(R.string.tv_latitude) + Double.toString(location.getLatitude()));        //affiche à l'écrant les coordonées
                 ed_longitude.setText(getString(R.string.tv_longitude) + Double.toString(location.getLongitude()));
-                findViewById(R.id.BT_gps_continue).setVisibility(View.VISIBLE);
-                currentPosition = location;
+                findViewById(R.id.BT_gps_continue).setVisibility(View.VISIBLE);                     //rend boutton continuer visible dès qu'il y a un résultat
+                currentPosition = location;                                                         //enregistre la position pour l'intent
             }
-
             @Override
             public void onStatusChanged(String provider, int status, Bundle extras) {
-
             }
-
             @Override
             public void onProviderEnabled(String provider) {
-
             }
-
             @Override
             public void onProviderDisabled(String provider) {
-
             }
         };
 
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
+        //verification des permission gps
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
+                && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            //demmande de permission
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.ACCESS_COARSE_LOCATION}, 3);
         }
         else {
-            //locationManager.requestSingleUpdate(LocationManager.GPS_PROVIDER, onLocationChange,null);
+            //appel de onLocationUpdate toutes les 0 ms et 0 m
             locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, onLocationChange);
         }
     }
 
     public void gpsContinue(View view){
+        //intent vers le quiz avec les coordonées
         Intent intent = new Intent(getApplicationContext(), Quiz.class);
         intent.putExtra("Latitude",currentPosition.getLatitude());
         intent.putExtra("Longitude",currentPosition.getLongitude());

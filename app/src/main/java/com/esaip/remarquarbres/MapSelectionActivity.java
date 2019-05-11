@@ -7,7 +7,6 @@ import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
-
 import org.osmdroid.api.IMapController;
 import org.osmdroid.config.Configuration;
 import org.osmdroid.events.MapEventsReceiver;
@@ -18,8 +17,10 @@ import org.osmdroid.views.overlay.MapEventsOverlay;
 import org.osmdroid.views.overlay.Marker;
 
 public class MapSelectionActivity extends AppCompatActivity {
+
     MapView map = null;
     GeoPoint currentPosition = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,14 +53,10 @@ public class MapSelectionActivity extends AppCompatActivity {
         final MapEventsReceiver mReceive = new MapEventsReceiver(){
             @Override
             public boolean singleTapConfirmedHelper(GeoPoint p) {
-
                 marker.setPosition(p); //faudrait rafraichir un truc pour pas que ça lag
-
-                findViewById(R.id.BT_map_selection_continue).setVisibility(View.VISIBLE);
-
+                findViewById(R.id.BT_map_selection_continue).setVisibility(View.VISIBLE);           //fait apparitre le boutton
                 Toast.makeText(getBaseContext(),p.getLatitude() + " - "+p.getLongitude(), Toast.LENGTH_LONG).show();
-
-                currentPosition = p;
+                currentPosition = p;                                                                //enregistre la position pour l'intent
                 return false;
             }
             @Override
@@ -72,6 +69,7 @@ public class MapSelectionActivity extends AppCompatActivity {
     }
 
     public void mapContinue(View view){
+        //intent vers le quiz avec les coordonées
         Intent intent = new Intent(getApplicationContext(), Quiz.class);
         intent.putExtra("Latitude",currentPosition.getLatitude());
         intent.putExtra("Longitude",currentPosition.getLongitude());

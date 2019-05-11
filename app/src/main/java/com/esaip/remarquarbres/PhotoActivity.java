@@ -28,24 +28,22 @@ public class PhotoActivity extends AppCompatActivity {
 
     static final int REQUEST_TAKE_PHOTO = 71;
     String currentPhotoPath;
-    Button bt_photo;
     ImageView iv_photo;
+    Button bt_photo;
     Button bt_photo_quiz;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_photo);
-        bt_photo = findViewById(R.id.BT_photo_take);
         iv_photo = findViewById(R.id.IV_photo_image);
+        bt_photo = findViewById(R.id.BT_photo_take);
         bt_photo_quiz = findViewById(R.id.BT_photo_quiz);
-
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
         if(requestCode == REQUEST_TAKE_PHOTO && resultCode == Activity.RESULT_OK){
-
             Bitmap bitmap = BitmapFactory.decodeFile(currentPhotoPath);
             bitmap = RotateBitmap(bitmap,90);
             iv_photo.setImageBitmap(bitmap);
