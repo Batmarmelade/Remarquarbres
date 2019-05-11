@@ -7,15 +7,13 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
-import android.media.Image;
 import android.net.Uri;
+import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -30,24 +28,22 @@ public class PhotoActivity extends AppCompatActivity {
 
     static final int REQUEST_TAKE_PHOTO = 71;
     String currentPhotoPath;
-    Button bt_photo;
     ImageView iv_photo;
+    Button bt_photo;
     Button bt_photo_quiz;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_photo);
-        bt_photo = findViewById(R.id.BT_photo_take);
         iv_photo = findViewById(R.id.IV_photo_image);
+        bt_photo = findViewById(R.id.BT_photo_take);
         bt_photo_quiz = findViewById(R.id.BT_photo_quiz);
-
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
         if(requestCode == REQUEST_TAKE_PHOTO && resultCode == Activity.RESULT_OK){
-
             Bitmap bitmap = BitmapFactory.decodeFile(currentPhotoPath);
             bitmap = RotateBitmap(bitmap,90);
             iv_photo.setImageBitmap(bitmap);
@@ -125,7 +121,7 @@ public class PhotoActivity extends AppCompatActivity {
 
     }
     public void gotoquiz(View view){
-        startActivity(new Intent(getApplicationContext(),Quiz.class));
+        startActivity(new Intent(getApplicationContext(),TrackingMethodActivity.class));
     }
 
 }

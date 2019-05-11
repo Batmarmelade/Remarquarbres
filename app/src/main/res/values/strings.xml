@@ -10,7 +10,7 @@
     <string name="no_camera_permission">Permissions insuffisantes</string>
     <string name="testStr">Testing ...</string>
     <string name="SubmitButton"> Envoyer ! </string>
-    <string name="bt_photo_quiz">Passer au questionnaire</string>
+    <string name="bt_photo_quiz">Garder cette photo et continuer</string>
 
 
     <!-- Questions Quiz -->
@@ -107,4 +107,16 @@
     <!-- Choix Vérification Infos Botaniste -->
     <string name="oui">Oui</string>
     <string name="non">Non</string>
+
+    <string name="bt_map_marker_continue">Valider et continuer</string>
+
+    <string name="tv_tracking_method_question">Choisissez avec quel methode vous voulez récuperez les coordinées GPS de l\'arbre </string>
+    <string name="tv_tracking_method_gps">Utiliser le GPS du téléphone</string>
+    <string name="tv_tracking_method_map">Pionter la position de l\'arbre sur une carte (nécessite une connexion internet)</string>
+    <string name="tv_tracking_method_manual">Rentrer manuelent la longitude et la latitude</string>
+    <string name="bt_tracking_method">Choisir cette méthode</string>
+
+    <string name="tv_gps_consigne">Raprochez vous le plus possible de l\'arbre et appuyez sur le boutton</string>
+    <string name="tv_latitude">Latitude : </string>
+    <string name="tv_longitude">Longitude : </string>
 </resources>
