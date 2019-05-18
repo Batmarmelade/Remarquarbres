@@ -25,6 +25,7 @@ public class TrackingMethodActivity extends AppCompatActivity {
 
     public void choseManual(View view){
         Intent intent = new Intent(TrackingMethodActivity.this, Quiz.class);
+        intent.putExtra("ImageName", getIntent().getStringExtra("ImageName"));
         startActivity(intent);
     }
 }

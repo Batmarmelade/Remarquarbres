@@ -121,7 +121,9 @@ public class PhotoActivity extends AppCompatActivity {
 
     }
     public void gotoquiz(View view){
-        startActivity(new Intent(getApplicationContext(),TrackingMethodActivity.class));
+        Intent photoIntent = new Intent(getApplicationContext(),TrackingMethodActivity.class);
+        photoIntent.putExtra("ImageName", currentPhotoPath);
+        startActivity(photoIntent);
     }
 
 }

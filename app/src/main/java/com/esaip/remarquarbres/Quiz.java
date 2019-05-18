@@ -197,7 +197,7 @@ public class Quiz extends AppCompatActivity {
 
     public void submit(android.view.View v){
 
-        Intent returnIntent = getIntent();
+        Intent intent = new Intent(getApplicationContext(), Stockage.class);
 
         // Nom & Prénom
         this.réponses.put("Nom", ((EditText) findViewById(R.id.NomTxtEd)).getText().toString() );
@@ -254,12 +254,14 @@ public class Quiz extends AppCompatActivity {
                 if ( i == R.id.RemarquableAutreChBx ) {
                     EditText remarquableAutreEd = (EditText) findViewById(R.id.RemarquableAutreEd);
                     if ( ! remarquableAutreEd.getText().toString().equals("") )
-                        strRemarquable += remarquableAutreEd.getText().toString() + ";";
+                        strRemarquable += remarquableAutreEd.getText().toString() + " | ";
                 } else {
-                    strRemarquable += temp.getText() + ";";
+                    strRemarquable += temp.getText() + " | ";
                 }
             }
         }
+        if ( strRemarquable.length() != 0)
+            strRemarquable = strRemarquable.substring(0, strRemarquable.length() - 3);
         this.réponses.put("Remarquable", strRemarquable);
 
         // Biodiversité
@@ -272,12 +274,14 @@ public class Quiz extends AppCompatActivity {
                 if ( i == R.id.BiodiversitéAutreChBx ) {
                     EditText biodiversitéAutreEd = (EditText) findViewById(R.id.BiodiversitéAutreEd);
                     if ( ! biodiversitéAutreEd.getText().toString().equals("") )
-                        strBiodiversité += biodiversitéAutreEd.getText().toString() + ";";
+                        strBiodiversité += biodiversitéAutreEd.getText().toString() + " | ";
                 } else {
-                    strBiodiversité += temp.getText() + ";";
+                    strBiodiversité += temp.getText() + " | ";
                 }
             }
         }
+        if ( strBiodiversité.length() != 0)
+            strBiodiversité = strBiodiversité.substring(0, strBiodiversité.length() - 3);
         this.réponses.put("Biodiversité", strBiodiversité);
 
         // Remarquabilité
@@ -300,7 +304,6 @@ public class Quiz extends AppCompatActivity {
             strVerifBotaniste = rbChecked.getText().toString();
         }
         this.réponses.put("VérifBotaniste", strVerifBotaniste);
-        returnIntent.putExtra("VérifBotaniste", strVerifBotaniste);
 
         // Date
         this.réponses.put("Date", ((EditText) findViewById(R.id.DateEd)).getText().toString() );
@@ -328,9 +331,10 @@ public class Quiz extends AppCompatActivity {
 
         if ( allAnswered && correctDate ){
             for( String s : intitulesQuestions ){
-                returnIntent.putExtra(s, this.réponses.get(s));
+                intent.putExtra(s, this.réponses.get(s));
             }
-            setResult(Activity.RESULT_OK, returnIntent);
+            intent.putExtra("ImageName", getIntent().getStringExtra("ImageName"));
+            startActivity(intent);
             finish();
         } else {
             String strError = "";
