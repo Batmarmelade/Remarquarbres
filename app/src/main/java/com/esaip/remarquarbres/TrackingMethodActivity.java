@@ -15,11 +15,13 @@ public class TrackingMethodActivity extends AppCompatActivity {
 
     public void choseGPS(View view){
         Intent intent = new Intent(TrackingMethodActivity.this, GPSActivity.class);
+        intent.putExtra("ImageName", getIntent().getStringExtra("ImageName"));
         startActivity(intent);
     }
 
     public void choseMap(View view){
-        Intent intent = new Intent(TrackingMethodActivity.this, MapSelectionActivity.class);
+        Intent intent = new Intent(TrackingMethodActivity.this, Quiz.class);
+        intent.putExtra("ImageName", getIntent().getStringExtra("ImageName"));
         startActivity(intent);
     }
 

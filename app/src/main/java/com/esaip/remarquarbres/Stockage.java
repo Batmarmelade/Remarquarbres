@@ -13,10 +13,12 @@ import android.util.Log;
 import android.widget.TextView;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
+import java.nio.channels.FileChannel;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
@@ -78,13 +80,15 @@ public class Stockage extends AppCompatActivity {
         }
         Log.d("IO : FOLDER CREATION", "Folder created : " + var);
 
-        final String filename = folder.toString() + "/" + "Infos.txt";
-        Log.d("FOLDER CREATION", filename);
+        final String infosName = folder.toString() + "/" + "Infos" + Math.abs(new Random().nextInt()) + ".txt";
+        Log.d("FOLDER CREATION", infosName);
+        File info = new File(infosName);
 
-
-        if(!new File(filename).exists())
-            new File(filename).createNewFile();
-
+        var = false;
+        if(!info.exists()) {
+            var = info.createNewFile();
+        }
+        Log.d("IO : FILE CREATION", "File info created : " + var);
 
         // show waiting screen
         CharSequence contentTitle = getString(R.string.app_name);
@@ -101,7 +105,7 @@ public class Stockage extends AppCompatActivity {
             public void run() {
                 try {
 
-                    FileWriter fw = new FileWriter(filename);
+                    FileWriter fw = new FileWriter(infosName);
 
                     for ( String question : data.keySet() ){
                         fw.append(question + " : " + (data.get(question)) + "\n");
@@ -119,6 +123,36 @@ public class Stockage extends AppCompatActivity {
         }.start();
 
         // Copy image to correct folder
+        copyImage(folder);
+
+    }
+
+    public void copyImage(File folder) {
+        File srcImage = new File(getIntent().getStringExtra("ImageName"));
+        File dstImage = new File(folder, srcImage.getName());
+
+        try {
+            dstImage.createNewFile();
+
+            FileChannel source = null;
+            FileChannel destination = null;
+
+            try {
+                source = new FileInputStream(srcImage).getChannel();
+                destination = new FileOutputStream(dstImage).getChannel();
+                destination.transferFrom(source, 0, source.size());
+            } finally {
+                if (source != null) {
+                    source.close();
+                }
+                if (destination != null) {
+                    destination.close();
+                }
+            }
+        } catch (IOException e) {
+            Log.e("COPY ERROR", e.getMessage());
+            e.printStackTrace();
+        }
 
     }
 }
