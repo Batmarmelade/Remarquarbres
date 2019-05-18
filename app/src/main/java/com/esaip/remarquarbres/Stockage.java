@@ -44,7 +44,6 @@ public class Stockage extends AppCompatActivity {
             while (it.hasNext()) {
                 String key = it.next();
                 Log.i("RESULTS","[" + key + "=" + bundle.get(key)+"]");
-                ((TextView) findViewById(R.id.DataDump)).append("\n[" + key + "=" + bundle.get(key)+"]");
                 answers.put(key, bundle.get(key).toString());
             }
             Log.e("RESULTS","Dumping Intent end");

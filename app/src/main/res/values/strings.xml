@@ -119,4 +119,7 @@
     <string name="tv_gps_consigne">Rapprochez vous le plus près possible de l\'arbre et appuyez sur le bouton Valider</string>
     <string name="tv_latitude">Latitude : </string>
     <string name="tv_longitude">Longitude : </string>
+
+    <!-- Stockage -->
+    <string name="saving">Votre photo et vos réponses au formulaire vont être sauvegardées</string>
 </resources>
