@@ -1,11 +1,8 @@
 package com.esaip.remarquarbres;
 
-import android.Manifest;
-import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
@@ -20,6 +17,8 @@ public class AccueilActivity extends AppCompatActivity {
     private ImageButton imap;
     private ImageView mcopy;
     private String mapURl = "https://framacarte.org/fr/map/arbres-remarquables-vus-par-angers-loire-metropole_34990#14/";
+
+    private ImageButton testMap;
 
     public final static int code = 1337;
 

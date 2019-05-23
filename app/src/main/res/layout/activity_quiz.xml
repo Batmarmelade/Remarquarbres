@@ -17,8 +17,9 @@
     <ScrollView
         android:id="@+id/scrollView"
         app:layout_constraintTop_toBottomOf="@+id/progress_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/lighterGreen">
 
             <LinearLayout
                 android:orientation="vertical"
@@ -27,6 +28,8 @@
 
         <TextView
             android:id="@+id/QuestionsGen"
+            android:background="@color/darkerGreen"
+            android:textColor="@color/brown"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
@@ -44,6 +47,8 @@
 
             <TextView
                 android:id="@+id/QuestionNomTxtVw"
+                android:background="@color/darkerGreen"
+                android:textColor="@color/brown"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -66,6 +71,8 @@
 
             <TextView
                 android:id="@+id/QuestionPseudoTxtVw"
+                android:background="@color/darkerGreen"
+                android:textColor="@color/brown"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -76,7 +83,7 @@
                 android:id="@+id/AidePseudoTxtVw"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@android:color/darker_gray"
+                android:background="@color/lighterGreen"
                 android:text="@string/AidePseudo" />
 
             <EditText
@@ -96,6 +103,8 @@
 
             <TextView
                 android:id="@+id/QuestionMailTxtVw"
+                android:background="@color/darkerGreen"
+                android:textColor="@color/brown"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -106,7 +115,7 @@
                 android:id="@+id/AideMailTxtVw"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@android:color/darker_gray"
+                android:background="@color/lighterGreen"
                 android:text="@string/AideMail" />
 
             <EditText
@@ -125,7 +134,9 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/QuestionArbreTxtVw"
+                android:id="@+id/QuestionArbresTxtVw"
+                android:textColor="@color/brown"
+                android:background="@color/darkerGreen"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -136,7 +147,7 @@
                 android:id="@+id/AideArbresTxtVw"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@android:color/darker_gray"
+                android:background="@color/lighterGreen"
                 android:text="@string/AideArbres" />
 
             <RadioGroup
@@ -266,6 +277,8 @@
 
             <TextView
                 android:id="@+id/QuestionBotaniqueTxtVw"
+                android:background="@color/darkerGreen"
+                android:textColor="@color/brown"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -276,7 +289,7 @@
                 android:id="@+id/AideBotaniqueTxtVw"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@android:color/darker_gray"
+                android:background="@color/lighterGreen"
                 android:text="@string/AideBotanique" />
 
             <EditText
@@ -297,6 +310,8 @@
 
             <TextView
                 android:id="@+id/QuestionLatitudeTxtVw"
+                android:background="@color/darkerGreen"
+                android:textColor="@color/brown"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -307,7 +322,7 @@
                 android:id="@+id/AideCoordonéesLatitudeTxtVw"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@android:color/darker_gray"
+                android:background="@color/lighterGreen"
                 android:text="@string/AideCoordonées" />
 
             <EditText
@@ -328,6 +343,8 @@
 
             <TextView
                 android:id="@+id/QuestionLongitudeTxtVw"
+                android:background="@color/darkerGreen"
+                android:textColor="@color/brown"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -338,7 +355,7 @@
                 android:id="@+id/AideCoordonéesLongitudeTxtVw"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@android:color/darker_gray"
+                android:background="@color/lighterGreen"
                 android:text="@string/AideCoordonées" />
 
             <EditText
@@ -359,6 +376,8 @@
 
             <TextView
                 android:id="@+id/QuestionAddresseTxtVw"
+                android:background="@color/darkerGreen"
+                android:textColor="@color/brown"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -369,7 +388,7 @@
                 android:id="@+id/AideAddresseTxtVw"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@android:color/darker_gray"
+                android:background="@color/lighterGreen"
                 android:text="@string/AideAddresse" />
 
             <EditText
@@ -390,6 +409,8 @@
 
             <TextView
                 android:id="@+id/QuestionEmplacementTxtVw"
+                android:background="@color/darkerGreen"
+                android:textColor="@color/brown"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -435,6 +456,8 @@
 
             <TextView
                 android:id="@+id/QuestionRemarquableTxtVw"
+                android:background="@color/darkerGreen"
+                android:textColor="@color/brown"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -445,7 +468,7 @@
                 android:id="@+id/AideRemarquableTxtVw"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@android:color/darker_gray"
+                android:background="@color/lighterGreen"
                 android:text="@string/AideRemarquable" />
 
             <CheckBox
@@ -511,6 +534,8 @@
 
             <TextView
                 android:id="@+id/QuestionBiodiversitéTxtVw"
+                android:textColor="@color/brown"
+                android:background="@color/darkerGreen"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -521,7 +546,7 @@
                 android:id="@+id/AideBiodiversitéTxtVw"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@android:color/darker_gray"
+                android:background="@color/lighterGreen"
                 android:text="@string/AideBiodiversité" />
 
             <CheckBox
@@ -581,6 +606,8 @@
 
             <TextView
                 android:id="@+id/QuestionRemarquabilitéTxtVw"
+                android:textColor="@color/brown"
+                android:background="@color/darkerGreen"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -591,7 +618,7 @@
                 android:id="@+id/AideRemarquabilitéTxtVw"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@android:color/darker_gray"
+                android:background="@color/lighterGreen"
                 android:text="@string/AideRemarquabilité" />
 
             <RadioGroup
@@ -633,6 +660,8 @@
 
             <TextView
                 android:id="@+id/QuestionObservationsTxtVw"
+                android:background="@color/darkerGreen"
+                android:textColor="@color/brown"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -657,6 +686,8 @@
 
             <TextView
                 android:id="@+id/QuestionVerifBotanisteTxtVw"
+                android:background="@color/darkerGreen"
+                android:textColor="@color/brown"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -695,6 +726,8 @@
 
             <TextView
                 android:id="@+id/QuestionDateTxtVw"
+                android:background="@color/darkerGreen"
+                android:textColor="@color/brown"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -705,7 +738,7 @@
                 android:id="@+id/AideDateTxtVw"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@android:color/darker_gray"
+                android:background="@color/lighterGreen"
                 android:text="@string/AideDate" />
 
             <EditText
@@ -722,6 +755,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="submit"
+            android:textColor="@color/paleYellow"
+            android:background="@color/brown"
             android:text="@string/SubmitButton" />
 
 
