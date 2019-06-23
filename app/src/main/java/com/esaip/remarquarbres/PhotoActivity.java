@@ -117,7 +117,10 @@ public class PhotoActivity extends AppCompatActivity {
         currentPhotoPath = image.getAbsolutePath();
         return image;
     }
-    
+
+    public static String getCurrentPhotoPath(){
+        return currentPhotoPath;
+    }
     public static Bitmap RotateBitmap(Bitmap source, float angle)
     {
         Matrix matrix = new Matrix();

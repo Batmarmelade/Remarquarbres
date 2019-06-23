@@ -29,9 +29,11 @@ import java.util.Set;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
+import static com.esaip.remarquarbres.PhotoActivity.getCurrentPhotoPath;
+
 public class Save_File extends AppCompatActivity {
 private Button send;
-private Context context = getApplicationContext();
+//private Context context = getApplicationContext();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +45,7 @@ private Context context = getApplicationContext();
             @Override
             public void onClick(View view) {
             File zipped = createDir();
-            composeEmail("mjosephine.ir2020@esaip.org", "Recensement arbre remarquable", Uri.fromFile(zipped));
+            composeEmail("mjosephine.ir2020@esaip.org", "Recensement arbre remarquable", Uri.parse("file://" + zipped));
                 //intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(new File("/path/to/file")));
 
             }
@@ -81,8 +83,8 @@ private Context context = getApplicationContext();
                 }
 
             out.close();
-            Toast zipOk = Toast.makeText(context, "Fichier zippé", Toast.LENGTH_SHORT);
-            zipOk.show();
+            //Toast zipOk = Toast.makeText(context, "Fichier zippé", Toast.LENGTH_SHORT);
+            //zipOk.show();
         } catch (Exception e) {
             e.printStackTrace();
             return false;
@@ -102,8 +104,9 @@ private Context context = getApplicationContext();
 
         File dataDir = new File(Environment.getExternalStorageDirectory()+ File.separator + PhotoActivity.getTimeStamp());
         dataDir.mkdir();
+        String photoPath = getCurrentPhotoPath();
 
-        File imageToCopy = new File (PhotoActivity.currentPhotoPath);
+        File imageToCopy = new File (photoPath);
         File sourceLocation= dataDir;
         File targetLocation= imageToCopy;
 
@@ -121,8 +124,8 @@ private Context context = getApplicationContext();
             }
             in.close();
             out.close();
-            Toast FichierOk = Toast.makeText(context, "Fichier créé", Toast.LENGTH_SHORT);
-            FichierOk.show();
+            //Toast FichierOk = Toast.makeText(context, "Fichier créé", Toast.LENGTH_SHORT);
+            //FichierOk.show();
         } catch (FileNotFoundException fne) {
             fne.printStackTrace();
         } catch (IOException ioe) {
