@@ -73,6 +73,7 @@ public class MapSelectionActivity extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), Quiz.class);
         intent.putExtra("Latitude",currentPosition.getLatitude());
         intent.putExtra("Longitude",currentPosition.getLongitude());
+        intent.putExtra("ImageName", getIntent().getStringExtra("ImageName"));
         startActivity(intent);
     }
 

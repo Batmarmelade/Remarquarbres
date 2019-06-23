@@ -20,7 +20,7 @@ public class TrackingMethodActivity extends AppCompatActivity {
     }
 
     public void choseMap(View view){
-        Intent intent = new Intent(TrackingMethodActivity.this, Quiz.class);
+        Intent intent = new Intent(TrackingMethodActivity.this, MapSelectionActivity.class);
         intent.putExtra("ImageName", getIntent().getStringExtra("ImageName"));
         startActivity(intent);
     }
